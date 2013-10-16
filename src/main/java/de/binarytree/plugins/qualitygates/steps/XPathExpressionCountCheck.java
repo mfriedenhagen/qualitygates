@@ -77,7 +77,15 @@ public class XPathExpressionCountCheck extends XMLCheck {
     public void doStep(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener, GateStepReport checkReport) {
         try {
             processTargetFileIfExistent(build, checkReport);
-        } catch (Exception e) {
+        } catch (IOException e) {
+            failStepWithExceptionAsReason(checkReport, e);
+        } catch (InterruptedException e) {
+            failStepWithExceptionAsReason(checkReport, e);
+        } catch (ParserConfigurationException e) {
+            failStepWithExceptionAsReason(checkReport, e);
+        } catch (XPathExpressionException e) {
+            failStepWithExceptionAsReason(checkReport, e);
+        } catch (SAXException e) {
             failStepWithExceptionAsReason(checkReport, e);
         }
     }

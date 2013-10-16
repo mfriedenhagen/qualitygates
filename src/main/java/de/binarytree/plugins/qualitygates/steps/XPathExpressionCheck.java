@@ -60,7 +60,13 @@ public class XPathExpressionCheck extends XMLCheck {
             BuildListener listener, GateStepReport checkReport) {
         try {
             matchExpression(build, checkReport);
-        } catch (Exception e) {
+        } catch (IOException e) {
+            failStepWithExceptionAsReason(checkReport, e);
+        } catch (ParserConfigurationException e) {
+            failStepWithExceptionAsReason(checkReport, e);
+        } catch (SAXException e) {
+            failStepWithExceptionAsReason(checkReport, e);
+        } catch (XPathExpressionException e) {
             failStepWithExceptionAsReason(checkReport, e);
         }
     }
