@@ -34,9 +34,9 @@ import de.binarytree.plugins.qualitygates.GateStepDescriptor;
  */
 public abstract class XMLCheck extends GateStep {
 
-    private String expression;
+    private final String expression;
 
-    private String targetFile;
+    private final String targetFile;
 
     public XMLCheck(String expression, String targetFile) {
         this.expression = expression;
@@ -58,7 +58,8 @@ public abstract class XMLCheck extends GateStep {
      * @param stream
      *            the stream to analyze
      * @return a list of nodes matching the predefined expression
-     * 
+     * @throws javax.xml.parsers.ParserConfigurationException
+     *             when the parser was misconfigured.
      * @throws SAXException
      *             when the stream cannot be parsed as XML
      * @throws IOException
@@ -139,7 +140,7 @@ public abstract class XMLCheck extends GateStep {
                 XPathFactory factory = XPathFactory.newInstance();
                 XPath xpath = factory.newXPath();
                 try {
-                    XPathExpression expr = xpath.compile(value);
+                    xpath.compile(value);
                 } catch (XPathExpressionException e) {
                     return FormValidation
                             .error("XPath expression is not valid.");
@@ -155,17 +156,19 @@ public abstract class XMLCheck extends GateStep {
          * @param value the target file path
          * @return whether the given file path is valid 
          */
-
         public FormValidation doCheckTargetFile(@QueryParameter String value) {
+            final FormValidation formValidation;
             if (value.length() == 0) {
-                return FormValidation.error("Target file must not be empty");
+                formValidation = FormValidation.error("Target file must not be empty");
             } else if (value.contains("..")) {
-                return FormValidation
+                formValidation = FormValidation
                         .error("Parent directory '..' may not be referenced");
             } else if (value.startsWith("/")) {
-                return FormValidation.error("Path may not be absolute.");
+                formValidation = FormValidation.error("Path may not be absolute.");
+            } else {
+                formValidation = FormValidation.ok();
             }
-            return FormValidation.ok();
+            return formValidation;
         }
 
     }
