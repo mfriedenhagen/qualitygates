@@ -298,6 +298,14 @@
             <forkCount>2</forkCount>
             <reuseForks>true</reuseForks>
           </configuration>
+          <executions>
+            <execution>
+              <id>default-integration-test</id>
+              <goals>
+                <goal>integration-test</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
