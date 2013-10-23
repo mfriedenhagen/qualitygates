@@ -27,6 +27,8 @@ import de.binarytree.plugins.qualitygates.steps.manualcheck.ManualCheckFinder.Ma
  */
 public class BuildResultAction implements ProminentProjectAction {
 
+    public static final String URL = "qualitygates";
+
     private static final String ICONS_PREFIX = "/plugin/qualitygates/images/24x24/";
 
     private QualityLineEvaluator gateEvaluator;
@@ -48,7 +50,7 @@ public class BuildResultAction implements ProminentProjectAction {
     }
 
     public String getUrlName() {
-        return "qualitygates";
+        return URL;
     }
 
     /**
