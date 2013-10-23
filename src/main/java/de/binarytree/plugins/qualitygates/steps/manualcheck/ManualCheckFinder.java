@@ -7,16 +7,15 @@ import de.binarytree.plugins.qualitygates.result.GateStepReport;
 import de.binarytree.plugins.qualitygates.result.QualityLineReport;
 
 /**
- * This class contains the algorithm to find the next unapproved manual check
- * which can then be approved or disapproved.
+ * This class contains the algorithm to find the next unapproved manual check which can then be approved or disapproved.
  * 
  * @author Marcel von Maltitz
  * 
  */
 public class ManualCheckFinder {
     /**
-     * This class holds the found manual check. This check can then be approved
-     * or disapproved with the help of this class.
+     * This class holds the found manual check. This check can then be approved or disapproved with the help of this
+     * class.
      * 
      * @author Marcel von Maltitz
      * 
@@ -50,17 +49,15 @@ public class ManualCheckFinder {
      * Constructs a new manual check finder
      * 
      * @param qualityLineReport
-     *            the quality line report to be used to find unapproved manual
-     *            gates
+     *            the quality line report to be used to find unapproved manual gates
      */
     public ManualCheckFinder(QualityLineReport qualityLineReport) {
         this.qualityLineReport = qualityLineReport;
     }
 
     /**
-     * When a manual, unapproved check exists, which has the given hash, a
-     * {@link ManualCheckManipulator} is return, which allows approving or
-     * disapproving this check.
+     * When a manual, unapproved check exists, which has the given hash, a {@link ManualCheckManipulator} is return,
+     * which allows approving or disapproving this check.
      * 
      * @param hashIdOfCheck
      *            the hash of the check which shall be found
@@ -69,16 +66,13 @@ public class ManualCheckFinder {
     public ManualCheckManipulator findCheckForGivenHash(String hashIdOfCheck) {
         GateReport unbuiltGate = this.getNextUnbuiltGate(qualityLineReport);
         if (unbuiltGate != null) {
-            return findNextManualUnbuiltCheckIfExists(hashIdOfCheck,
-                    unbuiltGate);
+            return findNextManualUnbuiltCheckIfExists(hashIdOfCheck, unbuiltGate);
         }
         return this.createNullManipulator();
     }
 
-    private ManualCheckManipulator findNextManualUnbuiltCheckIfExists(
-            String hashIdOfCheck, GateReport unbuiltGate) {
-        GateStepReport reportOfNextUnbuiltStep = this
-                .getNextUnbuiltStep(unbuiltGate);
+    private ManualCheckManipulator findNextManualUnbuiltCheckIfExists(String hashIdOfCheck, GateReport unbuiltGate) {
+        GateStepReport reportOfNextUnbuiltStep = this.getNextUnbuiltStep(unbuiltGate);
         GateStep step = reportOfNextUnbuiltStep.getStep();
         if (step instanceof ManualCheck) {
             return getCheckIfHashMatches(hashIdOfCheck, (ManualCheck) step);
@@ -87,8 +81,7 @@ public class ManualCheckFinder {
         }
     }
 
-    private ManualCheckManipulator getCheckIfHashMatches(String hashIdOfCheck,
-            ManualCheck manualCheck) {
+    private ManualCheckManipulator getCheckIfHashMatches(String hashIdOfCheck, ManualCheck manualCheck) {
         if (manualCheck.hasHash(hashIdOfCheck)) {
             return new ManualCheckManipulator(manualCheck);
         }
@@ -100,8 +93,7 @@ public class ManualCheckFinder {
     }
 
     /**
-     * Returns the report of next unbuilt gate using the given quality line
-     * report.
+     * Returns the report of next unbuilt gate using the given quality line report.
      * 
      * @param qualityLineReport
      *            the report to be analyzed to find the next unbuilt gate
@@ -129,10 +121,9 @@ public class ManualCheckFinder {
     }
 
     /**
-     * Returns the report of next unbuilt step using the given quality line
-     * report.
+     * Returns the report of next unbuilt step using the given quality line report.
      * 
-     * @param qualityLineReport
+     * @param gateReport
      *            the report to be analyzed to find the next unbuilt step
      * @return the gate report corresponding the next unbuilt step
      */

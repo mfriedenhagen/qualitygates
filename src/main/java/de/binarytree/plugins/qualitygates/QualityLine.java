@@ -27,8 +27,8 @@ import de.binarytree.plugins.qualitygates.result.BuildResultAction;
 /**
  * This class is the main entry point for this plugin.
  * 
- * It holds a list of gate which can then be used to evaluate the current build
- * via {@link #perform(AbstractBuild, Launcher, BuildListener)}.
+ * It holds a list of gate which can then be used to evaluate the current build via
+ * {@link #perform(AbstractBuild, Launcher, BuildListener)}.
  * 
  * @author Marcel von Maltitz
  */
@@ -66,8 +66,7 @@ public class QualityLine extends Recorder implements Saveable {
     }
 
     @Override
-    public boolean perform(AbstractBuild<?, ?> build, Launcher launcher,
-            BuildListener listener) {
+    public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) {
         listener.getLogger().println("Starting QualityLine");
         QualityLineEvaluator gateEvaluator = getGateEvaluatorForGates();
         gateEvaluator.evaluate(build, launcher, listener);
@@ -77,8 +76,7 @@ public class QualityLine extends Recorder implements Saveable {
     }
 
     /**
-     * Returns the object which does the actual evaluation of the gates and
-     * collection of reports.
+     * Returns the object which does the actual evaluation of the gates and collection of reports.
      * 
      * @return the evaluator as mentioned above
      */
@@ -130,8 +128,7 @@ public class QualityLine extends Recorder implements Saveable {
      * @return the XML file to be used for persisting this object.
      */
     protected XmlFile getConfigXml() {
-        return new XmlFile(Hudson.XSTREAM, new File(Hudson.getInstance()
-                .getRootDir(), "qualitygates.xml"));
+        return new XmlFile(Hudson.XSTREAM, new File(Hudson.getInstance().getRootDir(), "qualitygates.xml"));
     }
 
     public BuildStepMonitor getRequiredMonitorService() {
@@ -139,26 +136,17 @@ public class QualityLine extends Recorder implements Saveable {
     }
 
     /**
-     * Descriptor for {@link QualityLine}. Used as a singleton. The class is
-     * marked as public so that it can be accessed from views.
+     * Descriptor for {@link QualityLine}. Used as a singleton. The class is marked as public so that it can be accessed
+     * from views.
      * 
      * <p>
-     * See
-     * <tt>src/main/resources/hudson/plugins/hello_world/HelloWorldBuilder/*.jelly</tt>
-     * for the actual HTML fragment for the configuration screen.
+     * See <tt>src/main/resources/hudson/plugins/hello_world/HelloWorldBuilder/*.jelly</tt> for the actual HTML fragment
+     * for the configuration screen.
      */
     @Extension
     // This indicates to Jenkins that this is an implementation of an extension
     // point
-    public static final class DescriptorImpl extends
-            BuildStepDescriptor<Publisher> {
-        /**
-         * To persist global configuration information, simply store it in a
-         * field and call save().
-         * 
-         * <p>
-         * If you don't want fields to be persisted, use <tt>transient</tt>.
-         */
+    public static final class DescriptorImpl extends BuildStepDescriptor<Publisher> {
 
         public Collection<QualityGateDescriptor> getDescriptors() {
             return Gate.all();
@@ -173,6 +161,8 @@ public class QualityLine extends Recorder implements Saveable {
 
         /**
          * This human readable name is used in the configuration screen.
+         * 
+         * @return the name of this plugin to display
          */
         @Override
         public String getDisplayName() {

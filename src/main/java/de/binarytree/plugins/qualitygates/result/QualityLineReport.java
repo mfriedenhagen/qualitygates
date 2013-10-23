@@ -8,8 +8,8 @@ import java.util.List;
 import de.binarytree.plugins.qualitygates.Gate;
 
 /**
- * This class represents a report about the execution of a quality line. It
- * holds all reports of the gates contained in the corresponding quality line.
+ * This class represents a report about the execution of a quality line. It holds all reports of the gates contained in
+ * the corresponding quality line.
  * 
  * @author Marcel von Maltitz
  * 
@@ -30,12 +30,12 @@ public class QualityLineReport extends ListContainer<GateReport> {
     }
 
     /**
-     * Adds a new {@link GateReport} to the end of this quality line report. If
-     * the report is already contained in this quality line report, as defined
-     * by {@link #isSameItem(GateReport, GateReport)}, the old report is
-     * replaced by the given without changing the order of the gate reports.
+     * Adds a new {@link GateReport} to the end of this quality line report. If the report is already contained in this
+     * quality line report, as defined by {@link #isSameItem(GateReport, GateReport)}, the old report is replaced by the
+     * given without changing the order of the gate reports.
      * 
      * @param gateReport
+     *            the {@link GateReport} to be added
      */
     public void addGateReport(GateReport gateReport) {
         this.addOrReplaceItem(gateReport);
@@ -51,8 +51,8 @@ public class QualityLineReport extends ListContainer<GateReport> {
     }
 
     /**
-     * Returns the {@link GateReport} {@link Result} for the given {@link Gate}
-     * if it has been reported. Returns {@link Result#NOT_BUILT} otherwise.
+     * Returns the {@link GateReport} {@link Result} for the given {@link Gate} if it has been reported. Returns
+     * {@link Result#NOT_BUILT} otherwise.
      * 
      * @param gate
      *            the gate of which the report shall be returned
@@ -88,8 +88,8 @@ public class QualityLineReport extends ListContainer<GateReport> {
     }
 
     /**
-     * Returns the number of the gates which have been successfully evaluated.
-     * Equals {@link #getNumberOfGates()} when all gates have been successful.
+     * Returns the number of the gates which have been successfully evaluated. Equals {@link #getNumberOfGates()} when
+     * all gates have been successful.
      * 
      * @return the number of successful gates
      */
@@ -105,9 +105,8 @@ public class QualityLineReport extends ListContainer<GateReport> {
     }
 
     /**
-     * Returns a list of strings which tell about the reasons why the quality
-     * line terminated. These reasons are provided by the gate report of all
-     * failed gates.
+     * Returns a list of strings which tell about the reasons why the quality line terminated. These reasons are
+     * provided by the gate report of all failed gates.
      * 
      * @return a list of termination reasons
      */

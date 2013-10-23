@@ -4,9 +4,8 @@ import hudson.model.Result;
 import de.binarytree.plugins.qualitygates.GateStep;
 
 /**
- * This class represents the report of performed gate step. The result is
- * reported as well a (optional) reason of the result. The reason is not
- * optional, when the step was not successful.
+ * This class represents the report of performed gate step. The result is reported as well a (optional) reason of the
+ * result. The reason is not optional, when the step was not successful.
  * 
  * @author Marcel von Maltitz
  * 
@@ -14,9 +13,13 @@ import de.binarytree.plugins.qualitygates.GateStep;
 public class GateStepReport {
 
     private String stepName;
+
     private String description;
+
     private Result result = Result.NOT_BUILT;
+
     private String reason;
+
     private GateStep step;
 
     /**
@@ -53,8 +56,7 @@ public class GateStepReport {
     }
 
     /**
-     * Returns the reason for the result of this report. When the result is
-     * positive, the reason may be empty.
+     * Returns the reason for the result of this report. When the result is positive, the reason may be empty.
      * 
      * @return the reason for the result of this report
      */
@@ -78,11 +80,12 @@ public class GateStepReport {
     }
 
     /**
-     * Documents the result of the corresponding step. Note: Negative results
-     * also need a supplied reason of failure.
+     * Documents the result of the corresponding step. Note: Negative results also need a supplied reason of failure.
      * 
      * @param result
      *            the result for the corresponding step
+     * @param the
+     *            reason which lead to this result
      */
     public void setResult(Result result, String reason) {
         if (isNegative(result) && isEmpty(reason)) {
@@ -99,7 +102,7 @@ public class GateStepReport {
     }
 
     private boolean isEmpty(String reason) {
-        return reason == null || reason.isEmpty();
+        return (reason == null) || reason.isEmpty();
     }
 
     private void throwExceptionDueToMissingReason() {

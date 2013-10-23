@@ -25,9 +25,8 @@ import de.binarytree.plugins.qualitygates.GateStep;
 import de.binarytree.plugins.qualitygates.GateStepDescriptor;
 
 /**
- * This check relates a given expression to a given target file. Nevertheless,
- * it does not implement logic to determine the result of the check based an
- * matching or not matching the expression in the given file.
+ * This check relates a given expression to a given target file. Nevertheless, it does not implement logic to determine
+ * the result of the check based an matching or not matching the expression in the given file.
  * 
  * @author Marcel von Maltitz
  * 
@@ -52,8 +51,7 @@ public abstract class XMLCheck extends GateStep {
     }
 
     /**
-     * Analyzes the given input stream whether it matches the expression defined
-     * during construction.
+     * Analyzes the given input stream whether it matches the expression defined during construction.
      * 
      * @param stream
      *            the stream to analyze
@@ -67,11 +65,9 @@ public abstract class XMLCheck extends GateStep {
      * @throws XPathExpressionException
      *             when the expression does not compile
      */
-    protected NodeList getMatchingNodes(InputStream stream)
-            throws ParserConfigurationException, SAXException, IOException,
-            XPathExpressionException {
-        DocumentBuilderFactory domFactory = DocumentBuilderFactory
-                .newInstance();
+    protected NodeList getMatchingNodes(InputStream stream) throws ParserConfigurationException, SAXException,
+            IOException, XPathExpressionException {
+        DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
         domFactory.setNamespaceAware(false);
         DocumentBuilder builder = domFactory.newDocumentBuilder();
         Document doc = builder.parse(stream);
@@ -93,13 +89,11 @@ public abstract class XMLCheck extends GateStep {
      *             when the file cannot be accessed
      * @throws InterruptedException
      */
-    protected boolean buildHasFileInWorkspace(AbstractBuild<?, ?> build)
-            throws IOException, InterruptedException {
+    protected boolean buildHasFileInWorkspace(AbstractBuild<?, ?> build) throws IOException, InterruptedException {
         return generateFilePathFromPathStringRelativeToBuild(build).exists();
     }
 
-    private FilePath generateFilePathFromPathStringRelativeToBuild(
-            AbstractBuild<?, ?> build) {
+    private FilePath generateFilePathFromPathStringRelativeToBuild(AbstractBuild<?, ?> build) {
         return build.getModuleRoot().child(this.targetFile);
     }
 
@@ -112,8 +106,7 @@ public abstract class XMLCheck extends GateStep {
      * @throws IOException
      *             when the target file cannot be accessed or read
      */
-    protected InputStream obtainInputStreamOfTargetfileRelativeToBuild(
-            AbstractBuild<?, ?> build) throws IOException {
+    protected InputStream obtainInputStreamOfTargetfileRelativeToBuild(AbstractBuild<?, ?> build) throws IOException {
         FilePath pom = build.getModuleRoot().child(this.targetFile);
         return pom.read();
     }
@@ -134,35 +127,33 @@ public abstract class XMLCheck extends GateStep {
          */
         public FormValidation doCheckExpression(@QueryParameter String value) {
             if (value.length() == 0) {
-                return FormValidation
-                        .error("XPath expression must not be empty");
+                return FormValidation.error("XPath expression must not be empty");
             } else {
                 XPathFactory factory = XPathFactory.newInstance();
                 XPath xpath = factory.newXPath();
                 try {
                     xpath.compile(value);
                 } catch (XPathExpressionException e) {
-                    return FormValidation
-                            .error("XPath expression is not valid.");
+                    return FormValidation.error("XPath expression is not valid.");
                 }
                 return FormValidation.ok();
             }
         }
 
         /**
-         * Whether the given target file is a valid reference. This does not
-         * check, whether the file actually and currently exists.
+         * Whether the given target file is a valid reference. This does not check, whether the file actually and
+         * currently exists.
          * 
-         * @param value the target file path
-         * @return whether the given file path is valid 
+         * @param value
+         *            the target file path
+         * @return whether the given file path is valid
          */
         public FormValidation doCheckTargetFile(@QueryParameter String value) {
             final FormValidation formValidation;
             if (value.length() == 0) {
                 formValidation = FormValidation.error("Target file must not be empty");
             } else if (value.contains("..")) {
-                formValidation = FormValidation
-                        .error("Parent directory '..' may not be referenced");
+                formValidation = FormValidation.error("Parent directory '..' may not be referenced");
             } else if (value.startsWith("/")) {
                 formValidation = FormValidation.error("Path may not be absolute.");
             } else {

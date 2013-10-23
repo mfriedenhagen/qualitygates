@@ -33,6 +33,12 @@ public class BuildLogFileParser {
 
     private static final Pattern BANNED_OUTPUT = Pattern.compile("Found Banned Dependency:.*");
 
+    /**
+     * This enumeration defines regex to match the start lines for maven log sections to be parsed.
+     * 
+     * @author Marcel von Maltitz
+     * 
+     */
     public enum Goal {
         DEPENDENCY_ANALYSE(LOG_LEVEL_REGEX + "--- maven-dependency-plugin:[^:]+:analyze(-only| ).*", MAVEN_OUTPUT), BANNED_DEPENDENCY_ANALYSE(
                 LOG_LEVEL_REGEX + "--- maven-enforcer-plugin:[^:]+:enforce.*", BANNED_OUTPUT);
