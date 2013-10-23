@@ -1,0 +1,5 @@
+release.properties
+src/main/java/model/User.java
+src/main/java/model/Address.java
+pom.xml
+src/test/java/model/UserTest.java

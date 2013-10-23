@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.maven.MavenModuleSetBuild plugin="maven-plugin@1.533">
+  <actions>
+    <hudson.model.CauseAction>
+      <causes>
+        <hudson.model.Cause_-UserIdCause/>
+      </causes>
+    </hudson.model.CauseAction>
+    <hudson.scm.SCMRevisionState_-None/>
+    <hudson.maven.reporters.SurefireAggregatedReport>
+      <owner class="hudson.maven.MavenModuleSetBuild" reference="../../.."/>
+      <descriptions class="concurrent-hash-map"/>
+      <failCount>0</failCount>
+      <skipCount>0</skipCount>
+      <totalCount>7</totalCount>
+      <children>
+        <hudson.tasks.test.AggregatedTestResultAction_-Child>
+          <name>simpleproject:projectone</name>
+          <build>5</build>
+        </hudson.tasks.test.AggregatedTestResultAction_-Child>
+      </children>
+    </hudson.maven.reporters.SurefireAggregatedReport>
+    <de.binarytree.plugins.qualitygates.result.BuildResultAction plugin="qualitygates@1.0-SNAPSHOT">
+      <gateEvaluator>
+        <gates class="linked-list">
+          <de.binarytree.plugins.qualitygates.AndGate>
+            <name>Build stability</name>
+            <steps class="linked-list">
+              <de.binarytree.plugins.qualitygates.steps.MavenBuildSuccessCheck/>
+              <de.binarytree.plugins.qualitygates.steps.POMCheck>
+                <expression>/project/version</expression>
+                <targetFile>pom.xml</targetFile>
+                <reportContent>true</reportContent>
+              </de.binarytree.plugins.qualitygates.steps.POMCheck>
+            </steps>
+          </de.binarytree.plugins.qualitygates.AndGate>
+          <de.binarytree.plugins.qualitygates.ManualGate>
+            <name>Manual Gate</name>
+            <steps class="linked-list">
+              <de.binarytree.plugins.qualitygates.steps.manualcheck.ManualCheck>
+                <unknownUser>Unknown</unknownUser>
+              </de.binarytree.plugins.qualitygates.steps.manualcheck.ManualCheck>
+            </steps>
+          </de.binarytree.plugins.qualitygates.ManualGate>
+          <de.binarytree.plugins.qualitygates.AndGate>
+            <name>Static analysis</name>
+            <steps class="linked-list">
+              <de.binarytree.plugins.qualitygates.steps.PMDCheck>
+                <expression>/pmd/file/violation</expression>
+                <targetFile>target/pmd.xml</targetFile>
+                <successThreshold>0</successThreshold>
+                <warningThreshold>0</warningThreshold>
+                <name>pmd</name>
+              </de.binarytree.plugins.qualitygates.steps.PMDCheck>
+              <de.binarytree.plugins.qualitygates.steps.FindbugsCheck>
+                <expression>/BugCollection/BugInstance</expression>
+                <targetFile>target/findbugs.xml</targetFile>
+                <successThreshold>0</successThreshold>
+                <warningThreshold>0</warningThreshold>
+                <name>Findbugs</name>
+              </de.binarytree.plugins.qualitygates.steps.FindbugsCheck>
+              <de.binarytree.plugins.qualitygates.steps.CheckstyleCheck>
+                <expression>/checkstyle/file/violation | checkstyle/file/error</expression>
+                <targetFile>target/checkstyle-result.xml</targetFile>
+                <successThreshold>0</successThreshold>
+                <warningThreshold>0</warningThreshold>
+                <name>Checkstyle</name>
+              </de.binarytree.plugins.qualitygates.steps.CheckstyleCheck>
+            </steps>
+          </de.binarytree.plugins.qualitygates.AndGate>
+        </gates>
+        <executeGates>false</executeGates>
+        <qualityLineReport>
+          <items class="linked-list">
+            <de.binarytree.plugins.qualitygates.result.GateReport>
+              <items class="linked-list">
+                <de.binarytree.plugins.qualitygates.result.GateStepReport>
+                  <stepName>Result of Maven build</stepName>
+                  <description>The result of the maven build process</description>
+                  <result>SUCCESS</result>
+                  <reason>SUCCESS</reason>
+                  <step class="de.binarytree.plugins.qualitygates.steps.MavenBuildSuccessCheck" reference="../../../../../../gates/de.binarytree.plugins.qualitygates.AndGate/steps/de.binarytree.plugins.qualitygates.steps.MavenBuildSuccessCheck"/>
+                </de.binarytree.plugins.qualitygates.result.GateStepReport>
+                <de.binarytree.plugins.qualitygates.result.GateStepReport>
+                  <stepName>Check POM for XML tags</stepName>
+                  <description>Occurence of /project/version in pom.xml</description>
+                  <result>SUCCESS</result>
+                  <reason>Content: 0.0.1-SNAPSHOT</reason>
+                  <step class="de.binarytree.plugins.qualitygates.steps.POMCheck" reference="../../../../../../gates/de.binarytree.plugins.qualitygates.AndGate/steps/de.binarytree.plugins.qualitygates.steps.POMCheck"/>
+                </de.binarytree.plugins.qualitygates.result.GateStepReport>
+              </items>
+              <gateName>Build stability</gateName>
+              <result>SUCCESS</result>
+            </de.binarytree.plugins.qualitygates.result.GateReport>
+            <de.binarytree.plugins.qualitygates.result.GateReport>
+              <items class="linked-list">
+                <de.binarytree.plugins.qualitygates.result.GateStepReport>
+                  <stepName>Manual Check</stepName>
+                  <description>Waiting for manual approval (Hash: 13825193032941847261245)</description>
+                  <result>SUCCESS</result>
+                  <reason>Manually approved by Unknown</reason>
+                  <step class="de.binarytree.plugins.qualitygates.steps.manualcheck.ManualCheck" reference="../../../../../../gates/de.binarytree.plugins.qualitygates.ManualGate/steps/de.binarytree.plugins.qualitygates.steps.manualcheck.ManualCheck"/>
+                </de.binarytree.plugins.qualitygates.result.GateStepReport>
+              </items>
+              <gateName>Manual Gate</gateName>
+              <result>SUCCESS</result>
+            </de.binarytree.plugins.qualitygates.result.GateReport>
+            <de.binarytree.plugins.qualitygates.result.GateReport>
+              <items class="linked-list">
+                <de.binarytree.plugins.qualitygates.result.GateStepReport>
+                  <stepName>Check number of pmd violations</stepName>
+                  <description>pmd Violation Check</description>
+                  <result>FAILURE</result>
+                  <reason>3 violations. Fix at least 3 to improve state.</reason>
+                  <step class="de.binarytree.plugins.qualitygates.steps.PMDCheck" reference="../../../../../../gates/de.binarytree.plugins.qualitygates.AndGate[2]/steps/de.binarytree.plugins.qualitygates.steps.PMDCheck"/>
+                </de.binarytree.plugins.qualitygates.result.GateStepReport>
+                <de.binarytree.plugins.qualitygates.result.GateStepReport>
+                  <stepName>Check number of findbugs violations</stepName>
+                  <description>Findbugs Violation Check</description>
+                  <result>FAILURE</result>
+                  <reason>target/findbugs.xml not found</reason>
+                  <step class="de.binarytree.plugins.qualitygates.steps.FindbugsCheck" reference="../../../../../../gates/de.binarytree.plugins.qualitygates.AndGate[2]/steps/de.binarytree.plugins.qualitygates.steps.FindbugsCheck"/>
+                </de.binarytree.plugins.qualitygates.result.GateStepReport>
+                <de.binarytree.plugins.qualitygates.result.GateStepReport>
+                  <stepName>Check number of checkstyle violations</stepName>
+                  <description>Checkstyle Violation Check</description>
+                  <result>FAILURE</result>
+                  <reason>147 violations. Fix at least 147 to improve state.</reason>
+                  <step class="de.binarytree.plugins.qualitygates.steps.CheckstyleCheck" reference="../../../../../../gates/de.binarytree.plugins.qualitygates.AndGate[2]/steps/de.binarytree.plugins.qualitygates.steps.CheckstyleCheck"/>
+                </de.binarytree.plugins.qualitygates.result.GateStepReport>
+              </items>
+              <gateName>Static analysis</gateName>
+              <result>FAILURE</result>
+            </de.binarytree.plugins.qualitygates.result.GateReport>
+          </items>
+        </qualityLineReport>
+      </gateEvaluator>
+    </de.binarytree.plugins.qualitygates.result.BuildResultAction>
+    <hudson.tasks.Fingerprinter_-FingerprintAction>
+      <record>
+        <entry>
+          <string>org.hamcrest:hamcrest-core-1.1.jar</string>
+          <string>b66d0c48e1f1dc54d4227db52512c15b</string>
+        </entry>
+        <entry>
+          <string>junit:junit-dep-4.8.2.jar</string>
+          <string>6a8e30224331802bd3de0eb224ae50a2</string>
+        </entry>
+        <entry>
+          <string>simpleproject:projectone-0.0.1-SNAPSHOT.jar</string>
+          <string>eea3dfed523538c956a816176213bc63</string>
+        </entry>
+        <entry>
+          <string>simpleproject:projectone:pom.xml</string>
+          <string>030b94ee360e09263601cbd0793a441b</string>
+        </entry>
+      </record>
+    </hudson.tasks.Fingerprinter_-FingerprintAction>
+  </actions>
+  <number>5</number>
+  <startTime>1382519272779</startTime>
+  <result>SUCCESS</result>
+  <duration>30517</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/home/mvonmaltitz/Dokumente/Masterarbeit/code/qualitygates/work/workspace/Project One</workspace>
+  <hudsonVersion>1.533</hudsonVersion>
+  <scm class="hudson.plugins.filesystem_scm.ChangelogSet$XMLSerializer" plugin="filesystem_scm@1.20"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+  <mavenVersionUsed>3.0.4</mavenVersionUsed>
+</hudson.maven.MavenModuleSetBuild>

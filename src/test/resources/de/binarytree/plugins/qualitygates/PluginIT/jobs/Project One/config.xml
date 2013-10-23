@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<maven2-moduleset plugin="maven-plugin@1.533">
+  <actions/>
+  <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>3</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <rootModule>
+    <groupId>simpleproject</groupId>
+    <artifactId>projectone</artifactId>
+  </rootModule>
+  <goals>package pmd:pmd findbugs:findbugs checkstyle:checkstyle</goals>
+  <aggregatorStyleBuild>true</aggregatorStyleBuild>
+  <incrementalBuild>false</incrementalBuild>
+  <perModuleEmail>true</perModuleEmail>
+  <ignoreUpstremChanges>false</ignoreUpstremChanges>
+  <archivingDisabled>false</archivingDisabled>
+  <resolveDependencies>false</resolveDependencies>
+  <processPlugins>false</processPlugins>
+  <mavenValidationLevel>-1</mavenValidationLevel>
+  <runHeadless>false</runHeadless>
+  <disableTriggerDownstreamProjects>false</disableTriggerDownstreamProjects>
+  <settings class="jenkins.mvn.DefaultSettingsProvider"/>
+  <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
+  <reporters/>
+  <publishers>
+    <de.binarytree.plugins.qualitygates.QualityLine plugin="qualitygates@1.0-SNAPSHOT">
+      <name>Quality Line</name>
+      <gates class="linked-list">
+        <de.binarytree.plugins.qualitygates.AndGate>
+          <name>Build stability</name>
+          <steps class="linked-list">
+            <de.binarytree.plugins.qualitygates.steps.MavenBuildSuccessCheck/>
+            <de.binarytree.plugins.qualitygates.steps.POMCheck>
+              <expression>/project/version</expression>
+              <targetFile>pom.xml</targetFile>
+              <reportContent>true</reportContent>
+            </de.binarytree.plugins.qualitygates.steps.POMCheck>
+          </steps>
+        </de.binarytree.plugins.qualitygates.AndGate>
+        <de.binarytree.plugins.qualitygates.ManualGate>
+          <name>Manual Gate</name>
+          <steps class="linked-list">
+            <de.binarytree.plugins.qualitygates.steps.manualcheck.ManualCheck>
+              <unknownUser>Unknown</unknownUser>
+            </de.binarytree.plugins.qualitygates.steps.manualcheck.ManualCheck>
+          </steps>
+        </de.binarytree.plugins.qualitygates.ManualGate>
+        <de.binarytree.plugins.qualitygates.AndGate>
+          <name>Static analysis</name>
+          <steps class="linked-list">
+            <de.binarytree.plugins.qualitygates.steps.PMDCheck>
+              <expression>/pmd/file/violation</expression>
+              <targetFile>target/pmd.xml</targetFile>
+              <successThreshold>0</successThreshold>
+              <warningThreshold>0</warningThreshold>
+              <name>pmd</name>
+            </de.binarytree.plugins.qualitygates.steps.PMDCheck>
+            <de.binarytree.plugins.qualitygates.steps.FindbugsCheck>
+              <expression>/BugCollection/BugInstance</expression>
+              <targetFile>target/findbugs.xml</targetFile>
+              <successThreshold>0</successThreshold>
+              <warningThreshold>0</warningThreshold>
+              <name>Findbugs</name>
+            </de.binarytree.plugins.qualitygates.steps.FindbugsCheck>
+            <de.binarytree.plugins.qualitygates.steps.CheckstyleCheck>
+              <expression>/checkstyle/file/violation | checkstyle/file/error</expression>
+              <targetFile>target/checkstyle-result.xml</targetFile>
+              <successThreshold>0</successThreshold>
+              <warningThreshold>0</warningThreshold>
+              <name>Checkstyle</name>
+            </de.binarytree.plugins.qualitygates.steps.CheckstyleCheck>
+          </steps>
+        </de.binarytree.plugins.qualitygates.AndGate>
+      </gates>
+    </de.binarytree.plugins.qualitygates.QualityLine>
+  </publishers>
+  <buildWrappers/>
+  <prebuilders/>
+  <postbuilders/>
+  <runPostStepsIfResult>
+    <name>FAILURE</name>
+    <ordinal>2</ordinal>
+    <color>RED</color>
+    <completeBuild>true</completeBuild>
+  </runPostStepsIfResult>
+</maven2-moduleset>
