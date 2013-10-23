@@ -64,6 +64,20 @@ public class DependencyAnalysisParserTest extends AbstractParserTestUtils {
     }
 
     @Test
+    public void testParseLogWithUnusedAndUndeclaredWhereValidDependenciesAreAlsoListed() throws Exception {
+
+        File file = getFile("log_build_with_dependency_analyze_only_with_pretext");
+        String content = fileToString(file);
+
+        Map<DependencyProblemType, List<String>> result = DependencyAnalysisParser.parseDependencyAnalyzeSection(
+                content).getMapOfViolations();
+
+        verifyNumberOfProblemTypes(result, 2);
+        verifyNumberOfUnusedDeclarations(result, 4);
+        verifyNumberOfUndeclaredDependencies(result, 11);
+    }
+
+    @Test
     public void testParseLogWithUnusedAndUndeclared() throws Exception {
 
         File file = getFile("log_build_with_dependency_analyze");

@@ -2,7 +2,6 @@ package de.binarytree.plugins.qualitygates.steps.dependencycheck.parser;
 
 import java.io.File;
 import java.net.URL;
-import java.util.Enumeration;
 
 /**
  * Base class for parser tests.<br>
@@ -22,8 +21,8 @@ public class AbstractParserTestUtils {
      * @return the file
      * @throws Exception
      */
-    protected File getFile(String fileName) throws Exception {
-        URL fileURL = this.getClass().getResource(fileName);
+    public static File getFile(String fileName) throws Exception {
+        URL fileURL = AbstractParserTestUtils.class.getResource(fileName);
         File file = new File(fileURL.toURI());
         return file;
     }

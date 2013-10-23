@@ -1,0 +1,962 @@
+Started by upstream project "jenkinsci-jobConfigHistory-plugin-test-only" build number 223
+originally caused by:
+ Started by timer
+[EnvInject] - Loading node environment variables.
+Building in workspace /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin
+Checkout:jenkinsci-jobConfigHistory-plugin / /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin - hudson.remoting.LocalChannel@28fef3bd
+Using strategy: Default
+Last Built Revision: Revision 48fcf2366d2923367a132b4f56a2904df15457b4 (detached)
+Fetching changes from 1 remote Git repository
+Fetching upstream changes from origin
+Commencing build of Revision 48fcf2366d2923367a132b4f56a2904df15457b4 (detached)
+Checking out Revision 48fcf2366d2923367a132b4f56a2904df15457b4 (detached)
+No emails were triggered.
+Parsing POMs
+[jenkinsci-jobConfigHistory-plugin] $ java -Xms64m -Xmx256m -XX:MaxPermSize=128m -cp /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven31-agent-1.4.jar:/var/lib/jenkins/tools/Maven/Maven_3/apache-maven-3.1.1/boot/plexus-classworlds-2.5.1.jar:/var/lib/jenkins/tools/Maven/Maven_3/apache-maven-3.1.1/conf/logging jenkins.maven3.agent.Maven31Main /var/lib/jenkins/tools/Maven/Maven_3/apache-maven-3.1.1 /tmp/jetty-127.0.0.1-8000-jenkins.war-_hudson-any-/webapp/WEB-INF/lib/remoting-2.32.jar /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven31-interceptor-1.4.jar /var/lib/jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.4.jar 46294
+<===[JENKINS REMOTING CAPACITY]===>���channel started
+log4j:WARN No appenders could be found for logger (org.apache.commons.beanutils.converters.BooleanConverter).
+log4j:WARN Please initialize the log4j system properly.
+Executing Maven:  -B -f /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/pom.xml clean install site
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Jenkins Job Configuration History Plugin 2.5-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ jobConfigHistory ---
+[INFO] Deleting /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:validate (default-validate) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:display-info (display-info) @ jobConfigHistory ---
+[INFO] Maven Version: 3.1.1
+[INFO] JDK Version: 1.7.0_40 normalized as: 1.7.0-40
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 2.6.32-46-server
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.6.3.201306030806:prepare-agent (default) @ jobConfigHistory ---
+[INFO] argLine set to -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class
+[INFO] 
+[INFO] --- maven-localizer-plugin:1.14:generate (default) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ jobConfigHistory ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 31 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5:compile (default-compile) @ jobConfigHistory ---
+[INFO] Compiling 32 source files to /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/classes
+[INFO] 
+[INFO] --- access-modifier-checker:1.4:enforce (default-enforce) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:insert-test (default-insert-test) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- gmaven-plugin:1.3:generateTestStubs (test-in-groovy) @ jobConfigHistory ---
+[INFO] No sources found for Java stub generation
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ jobConfigHistory ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 12 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5:testCompile (default-testCompile) @ jobConfigHistory ---
+[INFO] Compiling 34 source files to /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/test-classes
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:test-hpl (default-test-hpl) @ jobConfigHistory ---
+[INFO] Generating /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/test-classes/the.hpl
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:resolve-test-dependencies (default-resolve-test-dependencies) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- gmaven-plugin:1.3:testCompile (test-in-groovy) @ jobConfigHistory ---
+[INFO] No sources found to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.16:test (default-test) @ jobConfigHistory ---
+[INFO] Surefire report directory: /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hudson.plugins.jobConfigHistory.GetDiffLinesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.677 sec - in hudson.plugins.jobConfigHistory.GetDiffLinesTest
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryRootActionTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 6.344 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryRootActionTest
+Running hudson.plugins.jobConfigHistory.FileNameComparatorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in hudson.plugins.jobConfigHistory.FileNameComparatorTest
+Running hudson.plugins.jobConfigHistory.HistoryDescrToConfigInfoTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in hudson.plugins.jobConfigHistory.HistoryDescrToConfigInfoTest
+Running hudson.plugins.jobConfigHistory.ConfigInfoCollectorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.471 sec - in hudson.plugins.jobConfigHistory.ConfigInfoCollectorTest
+Running hudson.plugins.jobConfigHistory.JobConfigBadgeActionTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.597 sec - in hudson.plugins.jobConfigHistory.JobConfigBadgeActionTest
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryActionFactoryTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.192 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryActionFactoryTest
+Running hudson.plugins.jobConfigHistory.PluginUtilsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in hudson.plugins.jobConfigHistory.PluginUtilsTest
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryProjectActionTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.824 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryProjectActionTest
+Running hudson.plugins.jobConfigHistory.HistoryFileFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in hudson.plugins.jobConfigHistory.HistoryFileFilterTest
+Running hudson.plugins.jobConfigHistory.FileHistoryDaoTest
+Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.555 sec - in hudson.plugins.jobConfigHistory.FileHistoryDaoTest
+Running hudson.plugins.jobConfigHistory.NonDeletedFileFilterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in hudson.plugins.jobConfigHistory.NonDeletedFileFilterTest
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.163 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryTest
+Running hudson.plugins.jobConfigHistory.ParsedDateComparatorTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec - in hudson.plugins.jobConfigHistory.ParsedDateComparatorTest
+Running hudson.plugins.jobConfigHistory.ConfigInfoTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in hudson.plugins.jobConfigHistory.ConfigInfoTest
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryPurgerTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.18 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryPurgerTest
+Running hudson.plugins.jobConfigHistory.DeletedFileFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec - in hudson.plugins.jobConfigHistory.DeletedFileFilterTest
+Running hudson.plugins.jobConfigHistory.JobConfigHistorySaveableListenerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec - in hudson.plugins.jobConfigHistory.JobConfigHistorySaveableListenerTest
+Running hudson.plugins.jobConfigHistory.NonJobsDirectoryFileFilterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec - in hudson.plugins.jobConfigHistory.NonJobsDirectoryFileFilterTest
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryBaseActionTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryBaseActionTest
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryJobListenerTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryJobListenerTest
+Running hudson.plugins.jobConfigHistory.NameFilenameFilterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec - in hudson.plugins.jobConfigHistory.NameFilenameFilterTest
+
+Results :
+
+Tests run: 194, Failures: 0, Errors: 0, Skipped: 3
+
+[JENKINS] Recording test results
+[INFO] 
+[INFO] --- maven-license-plugin:1.7:process (default) @ jobConfigHistory ---
+[INFO] Generated /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory/WEB-INF/licenses.xml
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:hpi (default-hpi) @ jobConfigHistory ---
+[INFO] Exploding webapp...
+[INFO] Copy webapp webResources to /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory
+[INFO] Assembling webapp jobConfigHistory in /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory
+[INFO] Generating hpi /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory.hpi
+[INFO] Generating /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory/META-INF/MANIFEST.MF
+[INFO] Building jar: /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory.hpi
+[INFO] Building jar: /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:attach-descriptor (attach-descriptor) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-failsafe-plugin:2.16:integration-test (default) @ jobConfigHistory ---
+[INFO] Failsafe report directory: /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/failsafe-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryPurgerIT
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.73 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryPurgerIT
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryRootActionIT
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 154.379 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryRootActionIT
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryIT
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 194.704 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryIT
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryJobListenerIT
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 45.148 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryJobListenerIT
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryBaseActionIT
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.319 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryBaseActionIT
+Running hudson.plugins.jobConfigHistory.JobConfigHistoryProjectActionIT
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.572 sec - in hudson.plugins.jobConfigHistory.JobConfigHistoryProjectActionIT
+Running hudson.plugins.jobConfigHistory.JobConfigBadgeActionIT
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 156.949 sec - in hudson.plugins.jobConfigHistory.JobConfigBadgeActionIT
+Running hudson.plugins.jobConfigHistory.PluginIT
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 90.817 sec - in hudson.plugins.jobConfigHistory.PluginIT
+Running InjectedTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.639 sec - in InjectedTest
+
+Results :
+
+Tests run: 69, Failures: 0, Errors: 0, Skipped: 0
+
+[JENKINS] Recording test results
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.6.3.201306030806:report (default) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ jobConfigHistory ---
+[INFO] Installing /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory.hpi to /home/jenkins/m2repo/org/jenkins-ci/plugins/jobConfigHistory/2.5-SNAPSHOT/jobConfigHistory-2.5-SNAPSHOT.hpi
+[INFO] Installing /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/pom.xml to /home/jenkins/m2repo/org/jenkins-ci/plugins/jobConfigHistory/2.5-SNAPSHOT/jobConfigHistory-2.5-SNAPSHOT.pom
+[INFO] Installing /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory.jar to /home/jenkins/m2repo/org/jenkins-ci/plugins/jobConfigHistory/2.5-SNAPSHOT/jobConfigHistory-2.5-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.3:site (default-site) @ jobConfigHistory ---
+[INFO] configuring report plugin org.apache.maven.plugins:maven-project-info-reports-plugin:2.7
+[INFO] configuring report plugin org.apache.maven.plugins:maven-jxr-plugin:2.3
+[INFO] configuring report plugin org.apache.maven.plugins:maven-javadoc-plugin:2.9.1
+[INFO] 
+[INFO] >>> maven-javadoc-plugin:2.9.1:aggregate (report:aggregate) @ jobConfigHistory >>>
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:validate (default-validate) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:display-info (display-info) @ jobConfigHistory ---
+[INFO] Maven Version: 3.1.1
+[INFO] JDK Version: 1.7.0_40 normalized as: 1.7.0-40
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 2.6.32-46-server
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.6.3.201306030806:prepare-agent (default) @ jobConfigHistory ---
+[INFO] argLine set to -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class
+[INFO] 
+[INFO] --- maven-localizer-plugin:1.14:generate (default) @ jobConfigHistory ---
+[INFO] 
+[INFO] <<< maven-javadoc-plugin:2.9.1:aggregate (report:aggregate) @ jobConfigHistory <<<
+[INFO] 
+[INFO] >>> maven-javadoc-plugin:2.9.1:test-aggregate (report:test-aggregate) @ jobConfigHistory >>>
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:validate (default-validate) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:display-info (display-info) @ jobConfigHistory ---
+[INFO] Maven Version: 3.1.1
+[INFO] JDK Version: 1.7.0_40 normalized as: 1.7.0-40
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 2.6.32-46-server
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.6.3.201306030806:prepare-agent (default) @ jobConfigHistory ---
+[INFO] argLine set to -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class
+[INFO] 
+[INFO] --- maven-localizer-plugin:1.14:generate (default) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ jobConfigHistory ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 31 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5:compile (default-compile) @ jobConfigHistory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- access-modifier-checker:1.4:enforce (default-enforce) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:insert-test (default-insert-test) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- gmaven-plugin:1.3:generateTestStubs (test-in-groovy) @ jobConfigHistory ---
+[INFO] No sources found for Java stub generation
+[INFO] 
+[INFO] <<< maven-javadoc-plugin:2.9.1:test-aggregate (report:test-aggregate) @ jobConfigHistory <<<
+[INFO] 
+[INFO] >>> maven-javadoc-plugin:2.9.1:javadoc (report:javadoc) @ jobConfigHistory >>>
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:validate (default-validate) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:display-info (display-info) @ jobConfigHistory ---
+[INFO] Maven Version: 3.1.1
+[INFO] JDK Version: 1.7.0_40 normalized as: 1.7.0-40
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 2.6.32-46-server
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.6.3.201306030806:prepare-agent (default) @ jobConfigHistory ---
+[INFO] argLine set to -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class
+[INFO] 
+[INFO] --- maven-localizer-plugin:1.14:generate (default) @ jobConfigHistory ---
+[INFO] 
+[INFO] <<< maven-javadoc-plugin:2.9.1:javadoc (report:javadoc) @ jobConfigHistory <<<
+[INFO] 
+[INFO] >>> maven-javadoc-plugin:2.9.1:test-javadoc (report:test-javadoc) @ jobConfigHistory >>>
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:validate (default-validate) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:display-info (display-info) @ jobConfigHistory ---
+[INFO] Maven Version: 3.1.1
+[INFO] JDK Version: 1.7.0_40 normalized as: 1.7.0-40
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 2.6.32-46-server
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.6.3.201306030806:prepare-agent (default) @ jobConfigHistory ---
+[INFO] argLine set to -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class
+[INFO] 
+[INFO] --- maven-localizer-plugin:1.14:generate (default) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ jobConfigHistory ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 31 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5:compile (default-compile) @ jobConfigHistory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- access-modifier-checker:1.4:enforce (default-enforce) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:insert-test (default-insert-test) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- gmaven-plugin:1.3:generateTestStubs (test-in-groovy) @ jobConfigHistory ---
+[INFO] No sources found for Java stub generation
+[INFO] 
+[INFO] <<< maven-javadoc-plugin:2.9.1:test-javadoc (report:test-javadoc) @ jobConfigHistory <<<
+[INFO] configuring report plugin org.codehaus.mojo:taglist-maven-plugin:2.4
+[INFO] configuring report plugin org.apache.maven.plugins:maven-surefire-report-plugin:2.16
+[INFO] configuring report plugin org.apache.maven.plugins:maven-checkstyle-plugin:2.6
+[INFO] configuring report plugin org.apache.maven.plugins:maven-pmd-plugin:2.5
+[INFO] configuring report plugin org.codehaus.mojo:findbugs-maven-plugin:2.3.2
+[INFO] canGenerate is true
+[INFO] configuring report plugin org.jacoco:jacoco-maven-plugin:0.6.3.201306030806
+[INFO] configuring report plugin org.codehaus.mojo:jdepend-maven-plugin:2.0-beta-2
+[INFO] 
+[INFO] >>> jdepend-maven-plugin:2.0-beta-2:generate (report:generate) @ jobConfigHistory >>>
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:validate (default-validate) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:display-info (display-info) @ jobConfigHistory ---
+[INFO] Maven Version: 3.1.1
+[INFO] JDK Version: 1.7.0_40 normalized as: 1.7.0-40
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 2.6.32-46-server
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.6.3.201306030806:prepare-agent (default) @ jobConfigHistory ---
+[INFO] argLine set to -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class
+[INFO] 
+[INFO] --- maven-localizer-plugin:1.14:generate (default) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ jobConfigHistory ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 31 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5:compile (default-compile) @ jobConfigHistory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< jdepend-maven-plugin:2.0-beta-2:generate (report:generate) @ jobConfigHistory <<<
+[INFO] configuring report plugin org.apache.maven.plugins:maven-dependency-plugin:2.3
+[INFO] 
+[INFO] >>> maven-dependency-plugin:2.3:analyze-report (report:analyze-report) @ jobConfigHistory >>>
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:validate (default-validate) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:enforce (enforce-maven) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.0.1:display-info (display-info) @ jobConfigHistory ---
+[INFO] Maven Version: 3.1.1
+[INFO] JDK Version: 1.7.0_40 normalized as: 1.7.0-40
+[INFO] OS Info: Arch: amd64 Family: unix Name: linux Version: 2.6.32-46-server
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.6.3.201306030806:prepare-agent (default) @ jobConfigHistory ---
+[INFO] argLine set to -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class -javaagent:/home/jenkins/m2repo/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=/home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec,excludes=**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class:**/hudson/plugins/jobConfigHistory/Messages.class:**/bmsi/util/*.class
+[INFO] 
+[INFO] --- maven-localizer-plugin:1.14:generate (default) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ jobConfigHistory ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 31 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5:compile (default-compile) @ jobConfigHistory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- access-modifier-checker:1.4:enforce (default-enforce) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:insert-test (default-insert-test) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- gmaven-plugin:1.3:generateTestStubs (test-in-groovy) @ jobConfigHistory ---
+[INFO] No sources found for Java stub generation
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ jobConfigHistory ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 12 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5:testCompile (default-testCompile) @ jobConfigHistory ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:test-hpl (default-test-hpl) @ jobConfigHistory ---
+[INFO] Generating /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/test-classes/the.hpl
+[INFO] 
+[INFO] --- maven-hpi-plugin:1.95:resolve-test-dependencies (default-resolve-test-dependencies) @ jobConfigHistory ---
+[INFO] 
+[INFO] --- gmaven-plugin:1.3:testCompile (test-in-groovy) @ jobConfigHistory ---
+[INFO] No sources found to compile
+[INFO] 
+[INFO] <<< maven-dependency-plugin:2.3:analyze-report (report:analyze-report) @ jobConfigHistory <<<
+[INFO] Parent project loaded from repository: org.jenkins-ci.plugins:plugin:pom:1.519
+[INFO] Parent project loaded from repository: org.jenkins-ci:jenkins:pom:1.31
+[INFO] Relativizing decoration links with respect to project URL: http://wiki.jenkins-ci.org/display/JENKINS/JobConfigHistory+Plugin
+[INFO] Rendering site with org.kohsuke:maven-skin:jar:1.1 skin.
+[INFO] Skipped "Source Xref" report, file "xref/index.html" already exists for the English version.
+[INFO] Skipped "Test Source Xref" report, file "xref-test/index.html" already exists for the English version.
+[INFO] Skipped "JavaDocs" report, file "apidocs/index.html" already exists for the English version.
+[INFO] Skipped "Test JavaDocs" report, file "testapidocs/index.html" already exists for the English version.
+[INFO] Generating "About" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Plugin Management" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Distribution Management" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Dependency Information" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Source Repository" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Mailing Lists" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Issue Tracking" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Continuous Integration" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Project Plugins" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Project License" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Dependency Management" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Project Team" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Project Summary" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Dependencies" report    --- maven-project-info-reports-plugin:2.7
+[INFO] Generating "Source Xref" report    --- maven-jxr-plugin:2.3
+[INFO] Generating "Test Source Xref" report    --- maven-jxr-plugin:2.3
+[INFO] Generating "JavaDocs" report    --- maven-javadoc-plugin:2.9.1
+[INFO] 
+18 warnings
+[WARNING] Javadoc Warnings
+[WARNING] /home/jenkins/m2repo/org/jenkins-ci/main/jenkins-core/1.519/jenkins-core-1.519.jar(jenkins/model/Jenkins.class): warning: Cannot find annotation method 'value()' in type 'SuppressWarnings': class file for edu.umd.cs.findbugs.annotations.SuppressWarnings not found
+[WARNING] /home/jenkins/m2repo/org/jenkins-ci/main/jenkins-core/1.519/jenkins-core-1.519.jar(jenkins/model/Jenkins.class): warning: Cannot find annotation method 'value()' in type 'SuppressWarnings'
+[WARNING] /home/jenkins/m2repo/org/jenkins-ci/main/jenkins-core/1.519/jenkins-core-1.519.jar(jenkins/model/Jenkins.class): warning: Cannot find annotation method 'value()' in type 'SuppressWarnings'
+[WARNING] /home/jenkins/m2repo/org/jenkins-ci/main/jenkins-core/1.519/jenkins-core-1.519.jar(hudson/Util.class): warning: Cannot find annotation method 'value()' in type 'SuppressWarnings'
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/bmsi/util/Diff.java:618: warning - Tag @see: missing '#': "equivCount()"
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/ItemListenerHistoryDao.java:33: warning - Tag @link: reference not found: ItemListener
+[WARNING] /home/jenkins/m2repo/org/jenkins-ci/main/jenkins-core/1.519/jenkins-core-1.519.jar(hudson/WebAppMain.class): warning: Cannot find annotation method 'value()' in type 'SuppressWarnings'
+[WARNING] /home/jenkins/m2repo/org/jenkins-ci/main/jenkins-core/1.519/jenkins-core-1.519.jar(hudson/UDPBroadcastThread.class): warning: Cannot find annotation method 'value()' in type 'SuppressWarnings'
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/JobConfigHistoryProjectAction.java:116: warning - Tag @link: can't find getConfigXml(String) in hudson.plugins.jobConfigHistory.JobConfigHistoryBaseAction
+[WARNING] /home/jenkins/m2repo/org/jenkins-ci/main/jenkins-core/1.519/jenkins-core-1.519.jar(hudson/triggers/Trigger.class): warning: Cannot find annotation method 'value()' in type 'SuppressWarnings'
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/JobConfigHistoryRootAction.java:86: warning - Tag @link: reference not found: AbstractItem
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/JobConfigHistoryRootAction.java:180: warning - Tag @link: can't find getConfigXml(String) in hudson.plugins.jobConfigHistory.JobConfigHistoryBaseAction
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/JobConfigHistoryRootAction.java:86: warning - Tag @link: reference not found: AbstractItem
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/ItemListenerHistoryDao.java:33: warning - Tag @link: reference not found: ItemListener
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/JobConfigHistoryRootAction.java:86: warning - Tag @link: reference not found: AbstractItem
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/ItemListenerHistoryDao.java:33: warning - Tag @link: reference not found: ItemListener
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/JobConfigHistoryRootAction.java:86: warning - Tag @link: reference not found: AbstractItem
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java/hudson/plugins/jobConfigHistory/ItemListenerHistoryDao.java:33: warning - Tag @link: reference not found: ItemListener
+[INFO] Generating "Test JavaDocs" report    --- maven-javadoc-plugin:2.9.1
+[INFO] 
+3 warnings
+[WARNING] Javadoc Warnings
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/test/java/hudson/plugins/jobConfigHistory/JobConfigHistoryBaseActionIT.java:81: warning - @return tag has no arguments.
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/test/java/hudson/plugins/jobConfigHistory/JobConfigHistoryBaseActionIT.java:73: warning - Tag @link: can't find getDiffFile(java.lang.String, java.lang.String) in hudson.plugins.jobConfigHistory.JobConfigHistoryBaseAction
+[WARNING] /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/test/java/hudson/plugins/jobConfigHistory/PluginIT.java:58: warning - @param argument "configPage" is not a parameter name.
+[INFO] Generating "Tag List" report    --- taglist-maven-plugin:2.4
+[WARNING] Using legacy tag format.  This is not recommended.
+[INFO] Generating "Surefire Report" report    --- maven-surefire-report-plugin:2.16
+[INFO] Generating "Failsafe Report" report    --- maven-surefire-report-plugin:2.16
+[warn] [XHTML Sink] Modified invalid anchor name: 'org.jvnet.hudson.testJellyTestSuiteBuilder$JellyCheck' to 'org.jvnet.hudson.testJellyTestSuiteBuilderJellyCheck'
+[warn] [XHTML Sink] Modified invalid anchor name: 'org.jvnet.hudson.testPluginAutomaticTestBuilder$CliSanityTest' to 'org.jvnet.hudson.testPluginAutomaticTestBuilderCliSanityTest'
+[INFO] Generating "Checkstyle" report    --- maven-checkstyle-plugin:2.6
+[INFO] 
+[INFO] Generating "PMD Report" report    --- maven-pmd-plugin:2.5
+[INFO] Generating "CPD Report" report    --- maven-pmd-plugin:2.5
+[INFO] Generating "FindBugs Report" report    --- findbugs-maven-plugin:2.3.2
+[INFO] canGenerate is true
+[INFO] canGenerate is true
+[INFO] Locale is en
+[INFO] ****** FindBugsMojo executeReport *******
+[INFO] XML outputFile is /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/findbugsXml.xml
+[INFO] XML output Directory is /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target
+[INFO] ****** FindBugsMojo executeFindbugs *******
+[INFO] Temp File is /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/findbugsTemp.xml
+[INFO] Fork Value is true
+[INFO] xmlOutput is true
+[INFO] xmlOutput is true
+[INFO] Generating "JaCoCo" report    --- jacoco-maven-plugin:0.6.3.201306030806
+[INFO] Generating "JDepend" report    --- jdepend-maven-plugin:2.0-beta-2
+[INFO] Generating "Dependency Analysis" report    --- maven-dependency-plugin:2.3
+[JENKINS] Archiving site from /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/site to /var/lib/jenkins/jobs/jenkinsci-jobConfigHistory-plugin/site
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.3:tree (default) @ jobConfigHistory ---
+[INFO] artifact com.github.jnr:jffi: checking for updates from repo.jenkins-ci.org
+[INFO] artifact com.github.jnr:jffi: checking for updates from jgit-repository
+[INFO] artifact com.github.jnr:jffi: checking for updates from oss-releases
+[INFO] artifact com.github.jnr:jffi: checking for updates from central
+[INFO] artifact com.github.jnr:jnr-x86asm: checking for updates from repo.jenkins-ci.org
+[INFO] artifact com.github.jnr:jnr-x86asm: checking for updates from jgit-repository
+[INFO] artifact com.github.jnr:jnr-x86asm: checking for updates from oss-releases
+[INFO] artifact com.github.jnr:jnr-x86asm: checking for updates from central
+[INFO] org.jenkins-ci.plugins:jobConfigHistory:hpi:2.5-SNAPSHOT
+[INFO] +- com.googlecode.java-diff-utils:diffutils:jar:1.2.1:compile
+[INFO] +- org.jenkins-ci.main:maven-plugin:jar:1.519:compile
+[INFO] |  +- org.jenkins-ci.plugins:javadoc:jar:1.0:compile
+[INFO] |  +- org.jenkins-ci.plugins:mailer:jar:1.5:compile
+[INFO] |  +- org.jenkins-ci.main.maven:maven-agent:jar:1.3:compile
+[INFO] |  |  +- (org.jenkins-ci.main.maven:maven-interceptor:jar:1.3:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.ant:ant:jar:1.8.0:compile - omitted for conflict with 1.8.3)
+[INFO] |  |  \- (commons-httpclient:commons-httpclient:jar:3.1:compile - omitted for duplicate)
+[INFO] |  +- org.jenkins-ci.main.maven:maven-interceptor:jar:1.3:compile
+[INFO] |  |  \- (commons-httpclient:commons-httpclient:jar:3.1:compile - omitted for duplicate)
+[INFO] |  +- org.jvnet.hudson:maven2.1-interceptor:jar:1.2:compile
+[INFO] |  +- org.jenkins-ci.main.maven:maven3-agent:jar:1.3:compile
+[INFO] |  |  +- (org.apache.maven:maven-embedder:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-classworlds:jar:2.3:compile - omitted for duplicate)
+[INFO] |  |  \- (org.sonatype.sisu:sisu-inject-plexus:jar:2.3.0:compile - omitted for duplicate)
+[INFO] |  +- org.jenkins-ci.main.maven:maven3-interceptor:jar:1.3:compile
+[INFO] |  |  +- (org.apache.maven:maven-core:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-embedder:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-aether-provider:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  \- (org.sonatype.sisu:sisu-inject-plexus:jar:2.3.0:compile - omitted for duplicate)
+[INFO] |  +- org.apache.ant:ant:jar:1.8.3:compile
+[INFO] |  |  \- org.apache.ant:ant-launcher:jar:1.8.3:compile
+[INFO] |  +- org.apache.maven:maven-core:jar:3.0.5:compile
+[INFO] |  |  +- org.apache.maven:maven-model:jar:3.0.5:compile
+[INFO] |  |  |  \- (org.codehaus.plexus:plexus-utils:jar:2.0.6:compile - omitted for duplicate)
+[INFO] |  |  +- org.apache.maven:maven-settings:jar:3.0.5:compile
+[INFO] |  |  |  \- (org.codehaus.plexus:plexus-utils:jar:2.0.6:compile - omitted for duplicate)
+[INFO] |  |  +- org.apache.maven:maven-settings-builder:jar:3.0.5:compile
+[INFO] |  |  |  +- (org.codehaus.plexus:plexus-utils:jar:2.0.6:compile - omitted for duplicate)
+[INFO] |  |  |  +- (org.codehaus.plexus:plexus-interpolation:jar:1.14:compile - omitted for duplicate)
+[INFO] |  |  |  +- (org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile - omitted for duplicate)
+[INFO] |  |  |  +- (org.apache.maven:maven-settings:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  |  \- (org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile - omitted for duplicate)
+[INFO] |  |  +- org.apache.maven:maven-repository-metadata:jar:3.0.5:compile
+[INFO] |  |  |  \- (org.codehaus.plexus:plexus-utils:jar:2.0.6:compile - omitted for duplicate)
+[INFO] |  |  +- org.apache.maven:maven-artifact:jar:3.0.5:compile
+[INFO] |  |  |  \- (org.codehaus.plexus:plexus-utils:jar:2.0.6:compile - omitted for duplicate)
+[INFO] |  |  +- org.apache.maven:maven-plugin-api:jar:3.0.5:compile
+[INFO] |  |  |  +- (org.apache.maven:maven-model:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  |  +- (org.apache.maven:maven-artifact:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  |  \- (org.sonatype.sisu:sisu-inject-plexus:jar:2.3.0:compile - omitted for duplicate)
+[INFO] |  |  +- org.apache.maven:maven-model-builder:jar:3.0.5:compile
+[INFO] |  |  |  +- (org.codehaus.plexus:plexus-utils:jar:2.0.6:compile - omitted for duplicate)
+[INFO] |  |  |  +- (org.codehaus.plexus:plexus-interpolation:jar:1.14:compile - omitted for duplicate)
+[INFO] |  |  |  +- (org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile - omitted for duplicate)
+[INFO] |  |  |  \- (org.apache.maven:maven-model:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-aether-provider:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-impl:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-api:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-util:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.sisu:sisu-inject-plexus:jar:2.3.0:compile - omitted for duplicate)
+[INFO] |  |  +- org.codehaus.plexus:plexus-interpolation:jar:1.14:compile
+[INFO] |  |  +- org.codehaus.plexus:plexus-utils:jar:2.0.6:compile
+[INFO] |  |  +- (org.codehaus.plexus:plexus-classworlds:jar:2.4:compile - omitted for conflict with 2.3)
+[INFO] |  |  +- org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[INFO] |  |  \- org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile
+[INFO] |  |     +- (org.codehaus.plexus:plexus-utils:jar:1.5.5:compile - omitted for conflict with 2.0.6)
+[INFO] |  |     \- (org.sonatype.plexus:plexus-cipher:jar:1.4:compile - omitted for conflict with 1.7)
+[INFO] |  +- org.apache.maven:maven-compat:jar:3.0.5:compile
+[INFO] |  |  +- (org.apache.maven:maven-model:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-model-builder:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-settings:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-artifact:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-core:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-utils:jar:2.0.6:compile - omitted for duplicate)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-interpolation:jar:1.14:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.sisu:sisu-inject-plexus:jar:2.3.0:compile - omitted for duplicate)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile - omitted for duplicate)
+[INFO] |  |  \- (org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile - omitted for duplicate)
+[INFO] |  +- org.apache.maven:maven-aether-provider:jar:3.0.5:compile
+[INFO] |  |  +- (org.apache.maven:maven-model:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-model-builder:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-repository-metadata:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-api:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-spi:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-util:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-impl:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile - omitted for duplicate)
+[INFO] |  |  \- (org.codehaus.plexus:plexus-utils:jar:2.0.6:compile - omitted for duplicate)
+[INFO] |  +- org.apache.maven:maven-embedder:jar:3.0.5:compile
+[INFO] |  |  +- (org.apache.maven:maven-settings:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-core:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-plugin-api:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-model-builder:jar:3.0.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven:maven-compat:jar:3.0.5:runtime - omitted for duplicate)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-utils:jar:2.0.6:compile - omitted for duplicate)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-classworlds:jar:2.4:compile - omitted for conflict with 2.3)
+[INFO] |  |  +- (org.sonatype.sisu:sisu-inject-plexus:jar:2.3.0:compile - omitted for duplicate)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:compile - omitted for duplicate)
+[INFO] |  |  +- org.sonatype.plexus:plexus-cipher:jar:1.7:compile
+[INFO] |  |  \- commons-cli:commons-cli:jar:1.2:compile
+[INFO] |  +- org.sonatype.aether:aether-api:jar:1.13.1:compile
+[INFO] |  +- org.sonatype.aether:aether-impl:jar:1.13.1:compile
+[INFO] |  |  +- (org.sonatype.aether:aether-api:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-spi:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  \- (org.sonatype.aether:aether-util:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  +- org.sonatype.aether:aether-spi:jar:1.13.1:compile
+[INFO] |  |  \- (org.sonatype.aether:aether-api:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  +- org.sonatype.aether:aether-util:jar:1.13.1:compile
+[INFO] |  |  \- (org.sonatype.aether:aether-api:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  +- org.sonatype.aether:aether-connector-wagon:jar:1.13.1:compile
+[INFO] |  |  +- (org.sonatype.aether:aether-api:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-spi:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-util:jar:1.13.1:compile - omitted for duplicate)
+[INFO] |  |  +- (org.apache.maven.wagon:wagon-provider-api:jar:1.0-beta-6:compile - omitted for conflict with 2.4)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-classworlds:jar:2.4:compile - omitted for conflict with 2.3)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-utils:jar:2.0.7:compile - omitted for conflict with 2.0.6)
+[INFO] |  |  \- (org.sonatype.sisu:sisu-inject-plexus:jar:2.2.3:compile - omitted for conflict with 2.3.0)
+[INFO] |  +- org.sonatype.sisu:sisu-inject-plexus:jar:2.3.0:compile
+[INFO] |  |  +- (org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile - omitted for duplicate)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-classworlds:jar:2.4:compile - omitted for conflict with 2.3)
+[INFO] |  |  +- (org.codehaus.plexus:plexus-utils:jar:2.1:compile - omitted for conflict with 2.0.6)
+[INFO] |  |  \- (org.sonatype.sisu:sisu-inject-bean:jar:2.3.0:compile - omitted for duplicate)
+[INFO] |  +- org.sonatype.sisu:sisu-guice:jar:3.1.0:compile
+[INFO] |  |  +- javax.inject:javax.inject:jar:1:compile
+[INFO] |  |  \- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  +- org.sonatype.sisu:sisu-inject-bean:jar:2.3.0:compile
+[INFO] |  +- org.apache.maven.wagon:wagon-http:jar:shaded:2.4:compile
+[INFO] |  |  \- (org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile - omitted for duplicate)
+[INFO] |  +- org.apache.maven.wagon:wagon-file:jar:2.4:compile
+[INFO] |  |  \- (org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile - omitted for duplicate)
+[INFO] |  +- org.apache.maven.wagon:wagon-ftp:jar:2.4:compile
+[INFO] |  |  +- commons-net:commons-net:jar:3.1:compile
+[INFO] |  |  +- org.slf4j:slf4j-api:jar:1.7.2:compile
+[INFO] |  |  \- (org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile - omitted for duplicate)
+[INFO] |  +- org.apache.maven.wagon:wagon-ssh:jar:2.4:compile
+[INFO] |  |  +- com.jcraft:jsch:jar:0.1.44-1:compile
+[INFO] |  |  +- (org.codehaus.plexus:plexus-utils:jar:3.0.8:compile - omitted for conflict with 2.0.6)
+[INFO] |  |  +- org.apache.maven.wagon:wagon-ssh-common:jar:2.4:compile
+[INFO] |  |  |  +- (org.codehaus.plexus:plexus-utils:jar:3.0.8:compile - omitted for conflict with 2.0.6)
+[INFO] |  |  |  +- org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-6:compile
+[INFO] |  |  |  |  \- (org.codehaus.plexus:plexus-utils:jar:1.4:compile - omitted for conflict with 2.0.6)
+[INFO] |  |  |  \- (org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile - omitted for duplicate)
+[INFO] |  |  \- (org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile - omitted for duplicate)
+[INFO] |  +- org.apache.maven.wagon:wagon-ssh-external:jar:2.4:compile
+[INFO] |  |  +- (org.codehaus.plexus:plexus-utils:jar:3.0.8:compile - omitted for conflict with 2.0.6)
+[INFO] |  |  +- (org.apache.maven.wagon:wagon-ssh-common:jar:2.4:compile - omitted for duplicate)
+[INFO] |  |  \- (org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile - omitted for duplicate)
+[INFO] |  +- org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile
+[INFO] |  |  \- (org.codehaus.plexus:plexus-utils:jar:3.0.8:compile - omitted for conflict with 2.0.6)
+[INFO] |  +- org.apache.maven.reporting:maven-reporting-api:jar:3.0:compile
+[INFO] |  |  \- org.apache.maven.doxia:doxia-sink-api:jar:1.0:compile
+[INFO] |  +- org.codehaus.plexus:plexus-classworlds:jar:2.3:compile
+[INFO] |  +- org.jenkins-ci.lib:lib-jenkins-maven-artifact-manager:jar:1.2:compile
+[INFO] |  |  +- (org.codehaus.plexus:plexus-utils:jar:2.0.5:compile - omitted for conflict with 2.0.6)
+[INFO] |  |  \- (org.apache.maven.wagon:wagon-provider-api:jar:1.0-beta-7:compile - omitted for conflict with 2.4)
+[INFO] |  +- commons-io:commons-io:jar:1.4:compile
+[INFO] |  +- org.jenkins-ci.lib:lib-jenkins-maven-embedder:jar:3.9:compile
+[INFO] |  |  +- (org.apache.maven:maven-core:jar:3.0.3:compile - omitted for conflict with 3.0.5)
+[INFO] |  |  +- (org.apache.maven:maven-artifact:jar:3.0.3:compile - omitted for conflict with 3.0.5)
+[INFO] |  |  +- (org.apache.maven:maven-compat:jar:3.0.3:compile - omitted for conflict with 3.0.5)
+[INFO] |  |  +- (org.apache.maven:maven-embedder:jar:3.0.3:compile - omitted for conflict with 3.0.5)
+[INFO] |  |  +- (org.apache.maven:maven-aether-provider:jar:3.0.3:compile - omitted for conflict with 3.0.5)
+[INFO] |  |  +- (org.sonatype.sisu:sisu-inject-plexus:jar:2.3.0:compile - omitted for duplicate)
+[INFO] |  |  +- (org.sonatype.aether:aether-connector-wagon:jar:1.13:compile - omitted for conflict with 1.13.1)
+[INFO] |  |  +- (org.apache.ant:ant:jar:1.8.0:compile - omitted for conflict with 1.8.3)
+[INFO] |  |  \- (org.apache.maven.wagon:wagon-provider-api:jar:2.1:compile - omitted for conflict with 2.4)
+[INFO] |  +- commons-httpclient:commons-httpclient:jar:3.1:compile
+[INFO] |  |  +- commons-logging:commons-logging:jar:1.1.1:compile
+[INFO] |  |  \- commons-codec:commons-codec:jar:1.6:compile
+[INFO] |  \- org.apache.maven.wagon:wagon-webdav-jackrabbit:jar:2.4:compile
+[INFO] |     +- org.apache.maven.wagon:wagon-http-shared:jar:2.4:compile
+[INFO] |     |  +- (commons-httpclient:commons-httpclient:jar:3.1:compile - omitted for duplicate)
+[INFO] |     |  +- (commons-logging:commons-logging:jar:1.1.1:compile - omitted for conflict with 1.1.1)
+[INFO] |     |  +- (commons-lang:commons-lang:jar:2.6:compile - omitted for duplicate)
+[INFO] |     |  +- (commons-io:commons-io:jar:2.2:compile - omitted for conflict with 1.4)
+[INFO] |     |  \- (org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile - omitted for duplicate)
+[INFO] |     +- org.apache.jackrabbit:jackrabbit-webdav:jar:2.5.2:compile
+[INFO] |     |  +- (org.slf4j:slf4j-api:jar:1.6.4:compile - omitted for conflict with 1.7.2)
+[INFO] |     |  \- (commons-httpclient:commons-httpclient:jar:3.1:compile - omitted for duplicate)
+[INFO] |     +- (org.slf4j:slf4j-api:jar:1.7.2:compile - omitted for duplicate)
+[INFO] |     +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |     +- (commons-io:commons-io:jar:2.2:compile - omitted for conflict with 1.4)
+[INFO] |     +- (commons-httpclient:commons-httpclient:jar:3.1:compile - omitted for duplicate)
+[INFO] |     \- (org.apache.maven.wagon:wagon-provider-api:jar:2.4:compile - omitted for duplicate)
+[INFO] +- junit:junit:jar:4.11:test
+[INFO] |  \- (org.hamcrest:hamcrest-core:jar:1.3:test - omitted for duplicate)
+[INFO] +- org.mockito:mockito-core:jar:1.9.5:test
+[INFO] |  +- (org.hamcrest:hamcrest-core:jar:1.1:test - omitted for conflict with 1.3)
+[INFO] |  \- org.objenesis:objenesis:jar:1.0:test
+[INFO] +- org.jenkins-ci.main:jenkins-test-harness:jar:1.519:test
+[INFO] |  +- org.jenkins-ci.main:jenkins-war:jar:war-for-test:1.519:test
+[INFO] |  |  +- (org.jenkins-ci.main:jenkins-core:jar:1.519:test - omitted for duplicate)
+[INFO] |  |  +- (org.jenkins-ci.main:remoting:jar:2.24:test - omitted for duplicate)
+[INFO] |  |  +- org.jenkins-ci.modules:instance-identity:jar:1.3:test
+[INFO] |  |  |  \- org.bouncycastle:bcpkix-jdk15on:jar:1.47:test
+[INFO] |  |  |     \- org.bouncycastle:bcprov-jdk15on:jar:1.47:test
+[INFO] |  |  +- org.jenkins-ci.modules:ssh-cli-auth:jar:1.2:test
+[INFO] |  |  |  \- (org.jenkins-ci.modules:instance-identity:jar:1.2:test - omitted for conflict with 1.3)
+[INFO] |  |  +- org.jenkins-ci.modules:slave-installer:jar:1.2:test
+[INFO] |  |  |  \- (org.jenkins-ci.modules:instance-identity:jar:1.1:test - omitted for conflict with 1.3)
+[INFO] |  |  +- org.jenkins-ci.modules:windows-slave-installer:jar:1.3:test
+[INFO] |  |  |  \- (org.jenkins-ci.modules:slave-installer:jar:1.1:test - omitted for conflict with 1.2)
+[INFO] |  |  +- org.jenkins-ci.modules:launchd-slave-installer:jar:1.2:test
+[INFO] |  |  |  +- (org.jenkins-ci.modules:slave-installer:jar:1.1:test - omitted for conflict with 1.2)
+[INFO] |  |  |  \- (org.jenkins-ci.modules:instance-identity:jar:1.1:test - omitted for conflict with 1.3)
+[INFO] |  |  +- org.jenkins-ci.modules:upstart-slave-installer:jar:1.1:test
+[INFO] |  |  |  \- (org.jenkins-ci.modules:slave-installer:jar:1.1:test - omitted for conflict with 1.2)
+[INFO] |  |  \- org.slf4j:slf4j-jdk14:jar:1.6.2:test
+[INFO] |  |     \- (org.slf4j:slf4j-api:jar:1.6.2:test - omitted for conflict with 1.7.2)
+[INFO] |  +- (org.jenkins-ci.main:maven-plugin:jar:1.519:test - omitted for duplicate)
+[INFO] |  +- org.jenkins-ci.plugins:ant:jar:1.2:test
+[INFO] |  +- org.jenkins-ci.plugins:subversion:jar:1.45:test
+[INFO] |  |  \- org.jenkins-ci.svnkit:svnkit:jar:1.7.6-jenkins-1:test
+[INFO] |  |     +- org.tmatesoft.sqljet:sqljet:jar:1.1.0:test
+[INFO] |  |     |  \- org.antlr:antlr-runtime:jar:3.4:test
+[INFO] |  |     \- de.regnis.q.sequence:sequence-library:jar:1.0.1:test
+[INFO] |  +- (org.jenkins-ci.plugins:mailer:jar:1.5:test - omitted for duplicate)
+[INFO] |  +- org.mortbay.jetty:jetty:jar:6.1.26:test
+[INFO] |  |  +- org.mortbay.jetty:jetty-util:jar:6.1.26:test
+[INFO] |  |  \- org.mortbay.jetty:servlet-api:jar:2.5-20081211:test
+[INFO] |  +- org.jvnet.hudson:test-annotations:jar:1.0:test
+[INFO] |  +- org.jvnet.mock-javamail:mock-javamail:jar:1.7:test
+[INFO] |  |  +- (javax.mail:mail:jar:1.4:test - omitted for conflict with 1.4.4)
+[INFO] |  |  \- (junit:junit:jar:3.8:test - omitted for conflict with 4.11)
+[INFO] |  +- (junit:junit:jar:4.11:test - omitted for duplicate)
+[INFO] |  +- org.hamcrest:hamcrest-library:jar:1.3:test
+[INFO] |  |  \- (org.hamcrest:hamcrest-core:jar:1.3:test - omitted for duplicate)
+[INFO] |  +- org.jenkins-ci:htmlunit:jar:2.6-jenkins-6:test
+[INFO] |  |  +- (xalan:xalan:jar:2.7.1:test - omitted for duplicate)
+[INFO] |  |  +- (commons-collections:commons-collections:jar:3.2.1:test - omitted for duplicate)
+[INFO] |  |  +- (commons-lang:commons-lang:jar:2.4:test - omitted for conflict with 2.6)
+[INFO] |  |  +- (commons-httpclient:commons-httpclient:jar:3.1:test - omitted for duplicate)
+[INFO] |  |  +- (commons-codec:commons-codec:jar:1.4:test - omitted for conflict with 1.6)
+[INFO] |  |  +- org.jvnet.hudson:htmlunit-core-js:jar:2.6-hudson-1:test
+[INFO] |  |  +- xerces:xercesImpl:jar:2.9.1:test
+[INFO] |  |  +- net.sourceforge.nekohtml:nekohtml:jar:1.9.13:test
+[INFO] |  |  +- net.sourceforge.cssparser:cssparser:jar:0.9.5:test
+[INFO] |  |  |  \- org.w3c.css:sac:jar:1.3:test
+[INFO] |  |  +- (commons-io:commons-io:jar:1.4:test - omitted for duplicate)
+[INFO] |  |  \- (commons-logging:commons-logging:jar:1.1.1:test - omitted for conflict with 1.1.1)
+[INFO] |  +- xalan:xalan:jar:2.7.1:test
+[INFO] |  |  \- xalan:serializer:jar:2.7.1:test
+[INFO] |  |     \- xml-apis:xml-apis:jar:1.3.04:test
+[INFO] |  +- org.jvnet.hudson:embedded-rhino-debugger:jar:1.2:test
+[INFO] |  |  \- (org.jvnet.hudson:htmlunit-core-js:jar:2.6-hudson-1:test - omitted for duplicate)
+[INFO] |  +- org.jvnet.hudson:netx:jar:0.5-hudson-2:test
+[INFO] |  +- org.easymock:easymock:jar:2.4:test
+[INFO] |  +- org.netbeans.modules:org-netbeans-insane:jar:RELEASE72:test
+[INFO] |  +- com.github.stephenc.findbugs:findbugs-annotations:jar:1.3.9-1:test
+[INFO] |  \- org.codehaus.geb:geb-implicit-assertions:jar:0.7.2:test
+[INFO] +- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] +- org.jenkins-ci.main:jenkins-war:war:1.519:test
+[INFO] +- org.jenkins-ci.main:jenkins-core:jar:1.519:provided
+[INFO] |  +- org.jenkins-ci.main:remoting:jar:2.24:provided
+[INFO] |  |  +- (org.apache.ant:ant:jar:1.8.3:provided - omitted for duplicate)
+[INFO] |  |  \- org.jenkins-ci:constant-pool-scanner:jar:1.1:provided
+[INFO] |  +- org.jenkins-ci.main:cli:jar:1.519:provided
+[INFO] |  |  +- (commons-codec:commons-codec:jar:1.4:provided - omitted for conflict with 1.6)
+[INFO] |  |  +- (org.jenkins-ci.main:remoting:jar:2.24:provided - omitted for duplicate)
+[INFO] |  |  +- (org.jvnet.localizer:localizer:jar:1.10:provided - omitted for duplicate)
+[INFO] |  |  \- (org.jenkins-ci:trilead-ssh2:jar:build214-jenkins-1:provided - omitted for conflict with build214-jenkins-2)
+[INFO] |  +- org.jenkins-ci:version-number:jar:1.1:provided
+[INFO] |  +- org.jenkins-ci:crypto-util:jar:1.1:provided
+[INFO] |  |  \- (commons-io:commons-io:jar:1.4:provided - omitted for duplicate)
+[INFO] |  +- org.jvnet.hudson:jtidy:jar:4aug2000r7-dev-hudson-1:provided
+[INFO] |  +- (org.sonatype.sisu:sisu-guice:jar:3.1.0:provided - omitted for duplicate)
+[INFO] |  +- org.jruby.ext.posix:jna-posix:jar:1.0.3:provided
+[INFO] |  +- com.github.jnr:jnr-posix:jar:3.0.0:provided
+[INFO] |  |  +- com.github.jnr:jnr-ffi:jar:1.0.4:provided
+[INFO] |  |  |  +- com.github.jnr:jffi:jar:1.2.7:provided
+[INFO] |  |  |  +- com.github.jnr:jffi:jar:native:1.2.7:provided
+[INFO] |  |  |  +- org.ow2.asm:asm:jar:4.0:provided
+[INFO] |  |  |  +- org.ow2.asm:asm-commons:jar:4.0:provided
+[INFO] |  |  |  |  \- (org.ow2.asm:asm-tree:jar:4.0:provided - omitted for duplicate)
+[INFO] |  |  |  +- org.ow2.asm:asm-analysis:jar:4.0:provided
+[INFO] |  |  |  |  \- (org.ow2.asm:asm-tree:jar:4.0:provided - omitted for duplicate)
+[INFO] |  |  |  +- org.ow2.asm:asm-tree:jar:4.0:provided
+[INFO] |  |  |  |  \- (org.ow2.asm:asm:jar:4.0:provided - omitted for duplicate)
+[INFO] |  |  |  +- org.ow2.asm:asm-util:jar:4.0:provided
+[INFO] |  |  |  |  \- (org.ow2.asm:asm-tree:jar:4.0:provided - omitted for duplicate)
+[INFO] |  |  |  \- com.github.jnr:jnr-x86asm:jar:1.0.2:provided
+[INFO] |  |  \- com.github.jnr:jnr-constants:jar:0.8.4:provided
+[INFO] |  +- org.kohsuke:trilead-putty-extension:jar:1.2:provided
+[INFO] |  |  \- (org.jenkins-ci:trilead-ssh2:jar:build214-jenkins-1:provided - omitted for duplicate)
+[INFO] |  +- org.jenkins-ci:trilead-ssh2:jar:build214-jenkins-2:provided
+[INFO] |  +- org.kohsuke.stapler:stapler-groovy:jar:1.207:provided
+[INFO] |  |  +- org.kohsuke.stapler:stapler-jelly:jar:1.207:provided
+[INFO] |  |  |  +- (org.kohsuke.stapler:stapler:jar:1.207:provided - omitted for duplicate)
+[INFO] |  |  |  +- org.jenkins-ci:commons-jelly:jar:1.1-jenkins-20120928:provided
+[INFO] |  |  |  |  +- (org.jenkins-ci:commons-jexl:jar:1.1-jenkins-20111212:provided - omitted for duplicate)
+[INFO] |  |  |  |  +- (commons-beanutils:commons-beanutils:jar:1.7.0:provided - omitted for duplicate)
+[INFO] |  |  |  |  \- (commons-collections:commons-collections:jar:3.2:provided - omitted for conflict with 3.2.1)
+[INFO] |  |  |  \- org.jvnet.hudson.dom4j:dom4j:jar:1.6.1-hudson-3:provided
+[INFO] |  |  \- (org.codehaus.groovy:groovy-all:jar:1.8.3:provided - omitted for conflict with 1.8.5)
+[INFO] |  +- org.kohsuke.stapler:stapler-jrebel:jar:1.207:provided
+[INFO] |  |  \- org.kohsuke.stapler:stapler:jar:1.207:provided
+[INFO] |  |     +- commons-discovery:commons-discovery:jar:0.4:provided
+[INFO] |  |     |  \- (commons-logging:commons-logging:jar:1.0.4:provided - omitted for duplicate)
+[INFO] |  |     +- (commons-beanutils:commons-beanutils:jar:1.7.0:provided - omitted for conflict with 1.8.0)
+[INFO] |  |     +- (commons-io:commons-io:jar:1.3.1:provided - omitted for conflict with 1.4)
+[INFO] |  |     +- (org.jvnet.localizer:localizer:jar:1.7:provided - omitted for conflict with 1.10)
+[INFO] |  |     +- (org.kohsuke.stapler:json-lib:jar:2.1-rev6:provided - omitted for conflict with 2.4-jenkins-1)
+[INFO] |  |     +- org.jvnet:tiger-types:jar:1.3:provided
+[INFO] |  |     +- (com.google.guava:guava:jar:r06:provided - omitted for conflict with 11.0.1)
+[INFO] |  |     +- org.kohsuke:asm3:jar:3.3.0:provided
+[INFO] |  |     \- commons-fileupload:commons-fileupload:jar:1.2.1:provided
+[INFO] |  +- org.kohsuke:windows-package-checker:jar:1.0:provided
+[INFO] |  +- org.kohsuke.stapler:stapler-adjunct-zeroclipboard:jar:1.1.7-1:provided
+[INFO] |  |  \- (org.kohsuke.stapler:stapler:jar:1.140:provided - omitted for conflict with 1.207)
+[INFO] |  +- org.kohsuke.stapler:stapler-adjunct-timeline:jar:1.4:provided
+[INFO] |  |  \- (org.kohsuke.stapler:stapler:jar:1.140:provided - omitted for conflict with 1.207)
+[INFO] |  +- org.kohsuke.stapler:stapler-adjunct-codemirror:jar:1.2:provided
+[INFO] |  |  \- (org.kohsuke.stapler:stapler:jar:1.140:provided - omitted for conflict with 1.207)
+[INFO] |  +- com.infradna.tool:bridge-method-annotation:jar:1.4:provided
+[INFO] |  +- org.kohsuke.stapler:json-lib:jar:2.4-jenkins-1:provided
+[INFO] |  |  +- (commons-beanutils:commons-beanutils:jar:1.8.0:provided - omitted for conflict with 1.8.3)
+[INFO] |  |  +- (commons-collections:commons-collections:jar:3.2.1:provided - omitted for duplicate)
+[INFO] |  |  +- (commons-lang:commons-lang:jar:2.5:provided - omitted for conflict with 2.6)
+[INFO] |  |  +- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  |  \- net.sf.ezmorph:ezmorph:jar:1.0.6:provided
+[INFO] |  |     \- (commons-lang:commons-lang:jar:2.3:provided - omitted for conflict with 2.6)
+[INFO] |  +- (commons-httpclient:commons-httpclient:jar:3.1:provided - omitted for duplicate)
+[INFO] |  +- args4j:args4j:jar:2.0.21:provided
+[INFO] |  +- org.jenkins-ci:annotation-indexer:jar:1.4:provided
+[INFO] |  +- org.jvnet.hudson:task-reactor:jar:1.2:provided
+[INFO] |  +- org.jvnet.localizer:localizer:jar:1.10:provided
+[INFO] |  +- antlr:antlr:jar:2.7.6:provided
+[INFO] |  +- org.jvnet.hudson:xstream:jar:1.4.4-jenkins-3:provided
+[INFO] |  |  +- xmlpull:xmlpull:jar:1.1.3.1:provided
+[INFO] |  |  \- xpp3:xpp3_min:jar:1.1.4c:provided
+[INFO] |  +- jfree:jfreechart:jar:1.0.9:provided
+[INFO] |  |  \- jfree:jcommon:jar:1.0.12:provided
+[INFO] |  +- (org.apache.ant:ant:jar:1.8.3:provided - omitted for duplicate)
+[INFO] |  +- (commons-io:commons-io:jar:1.4:provided - omitted for duplicate)
+[INFO] |  +- (commons-lang:commons-lang:jar:2.6:compile - scope updated from provided; omitted for duplicate)
+[INFO] |  +- commons-digester:commons-digester:jar:2.1:provided
+[INFO] |  |  +- (commons-beanutils:commons-beanutils:jar:1.8.3:provided - omitted for conflict with 1.8.0)
+[INFO] |  |  \- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  +- commons-beanutils:commons-beanutils:jar:1.8.3:provided
+[INFO] |  |  \- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  +- javax.mail:mail:jar:1.4.4:provided
+[INFO] |  +- org.jvnet.hudson:activation:jar:1.1.1-hudson-1:provided
+[INFO] |  +- jaxen:jaxen:jar:1.1-beta-11:provided
+[INFO] |  +- commons-jelly:commons-jelly-tags-fmt:jar:1.0:provided
+[INFO] |  +- commons-jelly:commons-jelly-tags-xml:jar:1.1:provided
+[INFO] |  |  +- (commons-beanutils:commons-beanutils:jar:1.6:provided - omitted for conflict with 1.8.3)
+[INFO] |  |  +- (commons-collections:commons-collections:jar:2.1:provided - omitted for conflict with 3.2.1)
+[INFO] |  |  +- (commons-logging:commons-logging:jar:1.0.3:provided - omitted for conflict with 1.1.1)
+[INFO] |  |  \- (jaxen:jaxen:jar:1.1-beta-2:provided - omitted for conflict with 1.1-beta-11)
+[INFO] |  +- org.jvnet.hudson:commons-jelly-tags-define:jar:1.0.1-hudson-20071021:provided
+[INFO] |  +- org.jenkins-ci:commons-jexl:jar:1.1-jenkins-20111212:provided
+[INFO] |  |  \- (commons-logging:commons-logging:jar:1.0.3:provided - omitted for conflict with 1.1.1)
+[INFO] |  +- org.acegisecurity:acegi-security:jar:1.0.7:provided
+[INFO] |  |  +- (org.springframework:spring-core:jar:1.2.9:provided - omitted for conflict with 2.5.6.SEC03)
+[INFO] |  |  +- org.springframework:spring-jdbc:jar:1.2.9:provided
+[INFO] |  |  |  +- (commons-logging:commons-logging:jar:1.0.4:provided - omitted for duplicate)
+[INFO] |  |  |  +- (org.springframework:spring-beans:jar:1.2.9:provided - omitted for conflict with 2.5.6.SEC03)
+[INFO] |  |  |  +- (org.springframework:spring-core:jar:1.2.9:provided - omitted for duplicate)
+[INFO] |  |  |  \- org.springframework:spring-dao:jar:1.2.9:provided
+[INFO] |  |  |     +- (commons-logging:commons-logging:jar:1.0.4:provided - omitted for duplicate)
+[INFO] |  |  |     +- (org.springframework:spring-beans:jar:1.2.9:provided - omitted for duplicate)
+[INFO] |  |  |     +- (org.springframework:spring-context:jar:1.2.9:provided - omitted for conflict with 2.5.6.SEC03)
+[INFO] |  |  |     \- (org.springframework:spring-core:jar:1.2.9:provided - omitted for duplicate)
+[INFO] |  |  +- (commons-lang:commons-lang:jar:2.1:provided - omitted for conflict with 2.6)
+[INFO] |  |  +- (commons-logging:commons-logging:jar:1.0.4:provided - omitted for duplicate)
+[INFO] |  |  +- (commons-codec:commons-codec:jar:1.3:provided - omitted for conflict with 1.6)
+[INFO] |  |  +- oro:oro:jar:2.0.8:provided
+[INFO] |  |  +- (commons-collections:commons-collections:jar:3.1:provided - omitted for conflict with 3.2.1)
+[INFO] |  |  \- log4j:log4j:jar:1.2.9:provided
+[INFO] |  +- org.codehaus.groovy:groovy-all:jar:1.8.5:provided
+[INFO] |  +- jline:jline:jar:0.9.94:provided
+[INFO] |  |  \- (junit:junit:jar:3.8.1:provided - omitted for conflict with 4.11)
+[INFO] |  +- org.fusesource.jansi:jansi:jar:1.9:provided
+[INFO] |  +- org.springframework:spring-webmvc:jar:2.5.6.SEC03:provided
+[INFO] |  |  +- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  |  +- org.springframework:spring-beans:jar:2.5.6.SEC03:provided
+[INFO] |  |  |  +- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  |  |  \- (org.springframework:spring-core:jar:2.5.6.SEC03:provided - omitted for conflict with 1.2.9)
+[INFO] |  |  +- org.springframework:spring-context:jar:2.5.6.SEC03:provided
+[INFO] |  |  |  +- (aopalliance:aopalliance:jar:1.0:provided - omitted for duplicate)
+[INFO] |  |  |  +- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  |  |  +- (org.springframework:spring-beans:jar:2.5.6.SEC03:provided - omitted for duplicate)
+[INFO] |  |  |  \- (org.springframework:spring-core:jar:2.5.6.SEC03:provided - omitted for conflict with 1.2.9)
+[INFO] |  |  +- org.springframework:spring-context-support:jar:2.5.6.SEC03:provided
+[INFO] |  |  |  +- (aopalliance:aopalliance:jar:1.0:provided - omitted for duplicate)
+[INFO] |  |  |  +- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  |  |  +- (org.springframework:spring-beans:jar:2.5.6.SEC03:provided - omitted for duplicate)
+[INFO] |  |  |  +- (org.springframework:spring-context:jar:2.5.6.SEC03:provided - omitted for duplicate)
+[INFO] |  |  |  \- (org.springframework:spring-core:jar:2.5.6.SEC03:provided - omitted for conflict with 1.2.9)
+[INFO] |  |  +- (org.springframework:spring-core:jar:2.5.6.SEC03:provided - omitted for conflict with 1.2.9)
+[INFO] |  |  \- org.springframework:spring-web:jar:2.5.6.SEC03:provided
+[INFO] |  |     +- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  |     +- (org.springframework:spring-beans:jar:2.5.6.SEC03:provided - omitted for duplicate)
+[INFO] |  |     +- (org.springframework:spring-context:jar:2.5.6.SEC03:provided - omitted for duplicate)
+[INFO] |  |     \- (org.springframework:spring-core:jar:2.5.6.SEC03:provided - omitted for conflict with 1.2.9)
+[INFO] |  +- org.springframework:spring-core:jar:2.5.6.SEC03:provided
+[INFO] |  |  \- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  +- org.springframework:spring-aop:jar:2.5.6.SEC03:provided
+[INFO] |  |  +- (aopalliance:aopalliance:jar:1.0:provided - omitted for duplicate)
+[INFO] |  |  +- (commons-logging:commons-logging:jar:1.1.1:provided - omitted for conflict with 1.1.1)
+[INFO] |  |  +- (org.springframework:spring-beans:jar:2.5.6.SEC03:provided - omitted for duplicate)
+[INFO] |  |  \- (org.springframework:spring-core:jar:2.5.6.SEC03:provided - omitted for duplicate)
+[INFO] |  +- xpp3:xpp3:jar:1.1.4c:provided
+[INFO] |  +- javax.servlet:jstl:jar:1.1.0:provided
+[INFO] |  +- (commons-logging:commons-logging:jar:1.1.1:compile - scope updated from provided; omitted for duplicate)
+[INFO] |  +- com.sun.xml.txw2:txw2:jar:20110809:provided
+[INFO] |  |  +- javax.xml.stream:stax-api:jar:1.0-2:provided
+[INFO] |  |  \- relaxngDatatype:relaxngDatatype:jar:20020414:provided
+[INFO] |  +- commons-collections:commons-collections:jar:3.2.1:provided
+[INFO] |  +- org.jvnet.winp:winp:jar:1.16:provided
+[INFO] |  |  \- (junit:junit:jar:3.8.1:provided - omitted for conflict with 4.11)
+[INFO] |  +- org.jenkins-ci:memory-monitor:jar:1.7:provided
+[INFO] |  |  \- (net.java.dev.jna:jna:jar:3.0.3-patch-1:provided - omitted for conflict with 3.3.0-jenkins-3)
+[INFO] |  +- org.codehaus.woodstox:wstx-asl:jar:3.2.9:provided
+[INFO] |  |  \- stax:stax-api:jar:1.0.1:provided
+[INFO] |  +- org.jenkins-ci:jmdns:jar:3.4.0-jenkins-3:provided
+[INFO] |  +- net.java.dev.jna:jna:jar:3.3.0-jenkins-3:provided
+[INFO] |  +- org.kohsuke:akuma:jar:1.9:provided
+[INFO] |  |  \- (net.java.dev.jna:jna:jar:3.4.0:provided - omitted for conflict with 3.3.0-jenkins-3)
+[INFO] |  +- org.kohsuke:libpam4j:jar:1.6:provided
+[INFO] |  |  \- (net.java.dev.jna:jna:jar:3.4.0:provided - omitted for conflict with 3.3.0-jenkins-3)
+[INFO] |  +- org.jvnet.libzfs:libzfs:jar:0.5:provided
+[INFO] |  |  \- (net.java.dev.jna:jna:jar:3.0.3-patch-1:provided - omitted for conflict with 3.3.0-jenkins-3)
+[INFO] |  +- com.sun.solaris:embedded_su4j:jar:1.1:provided
+[INFO] |  +- net.java.sezpoz:sezpoz:jar:1.9:provided
+[INFO] |  +- org.jenkins-ci:jinterop-wmi:jar:1.1:provided
+[INFO] |  |  +- org.kohsuke.jinterop:jinterop-proxy:jar:1.1:provided
+[INFO] |  |  |  +- (org.kohsuke.jinterop:j-interop:jar:2.0.5:provided - omitted for conflict with 2.0.6-kohsuke-1)
+[INFO] |  |  |  +- (org.jvnet:tiger-types:jar:1.1:provided - omitted for conflict with 1.3)
+[INFO] |  |  |  \- (org.samba.jcifs:jcifs:jar:1.3.3:provided - omitted for conflict with 1.3.14-kohsuke-1)
+[INFO] |  |  \- org.kohsuke.jinterop:j-interop:jar:2.0.6-kohsuke-1:provided
+[INFO] |  |     \- org.kohsuke.jinterop:j-interopdeps:jar:2.0.6-kohsuke-1:provided
+[INFO] |  |        \- (org.samba.jcifs:jcifs:jar:1.2.19:provided - omitted for conflict with 1.3.3)
+[INFO] |  +- org.jenkins-ci:windows-remote-command:jar:1.3:provided
+[INFO] |  |  +- (org.jenkins-ci:jinterop-wmi:jar:1.1:provided - omitted for duplicate)
+[INFO] |  |  \- org.samba.jcifs:jcifs:jar:1.3.14-kohsuke-1:provided
+[INFO] |  +- org.jvnet.robust-http-client:robust-http-client:jar:1.2:provided
+[INFO] |  +- (commons-codec:commons-codec:jar:1.6:compile - scope updated from provided; omitted for duplicate)
+[INFO] |  +- org.kohsuke:access-modifier-annotation:jar:1.4:provided
+[INFO] |  |  \- (org.jenkins-ci:annotation-indexer:jar:1.4:provided - omitted for duplicate)
+[INFO] |  +- org.kohsuke:owasp-html-sanitizer:jar:r88:provided
+[INFO] |  +- org.mindrot:jbcrypt:jar:0.3m:provided
+[INFO] |  \- com.google.guava:guava:jar:11.0.1:provided
+[INFO] |     \- com.google.code.findbugs:jsr305:jar:1.3.9:provided
+[INFO] +- org.jenkins-ci.main:ui-samples-plugin:jar:1.519:test
+[INFO] +- javax.servlet:servlet-api:jar:2.4:provided
+[INFO] \- org.codehaus.mojo:animal-sniffer-annotations:jar:1.9:provided
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.3:analyze-only (default) @ jobConfigHistory ---
+[INFO] Used declared dependencies found:
+[INFO]    com.googlecode.java-diff-utils:diffutils:jar:1.2.1:compile
+[INFO]    org.jenkins-ci.main:maven-plugin:jar:1.519:compile
+[INFO]    junit:junit:jar:4.11:test
+[INFO]    org.mockito:mockito-core:jar:1.9.5:test
+[INFO]    org.jenkins-ci.main:jenkins-test-harness:jar:1.519:test
+[INFO]    org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO]    org.jenkins-ci.main:jenkins-core:jar:1.519:provided
+[WARNING] Used undeclared dependencies found:
+[WARNING]    org.mortbay.jetty:servlet-api:jar:2.5-20081211:test
+[WARNING]    org.acegisecurity:acegi-security:jar:1.0.7:provided
+[WARNING]    org.jvnet.localizer:localizer:jar:1.10:provided
+[WARNING]    commons-io:commons-io:jar:1.4:compile
+[WARNING]    org.hamcrest:hamcrest-library:jar:1.3:test
+[WARNING]    org.kohsuke.stapler:stapler:jar:1.207:provided
+[WARNING]    org.jvnet.hudson:test-annotations:jar:1.0:test
+[WARNING]    org.jenkins-ci:htmlunit:jar:2.6-jenkins-6:test
+[WARNING]    commons-lang:commons-lang:jar:2.6:compile
+[WARNING]    org.kohsuke.stapler:json-lib:jar:2.4-jenkins-1:provided
+[WARNING]    xml-apis:xml-apis:jar:1.3.04:test
+[WARNING] Unused declared dependencies found:
+[WARNING]    org.jenkins-ci.main:jenkins-war:war:1.519:test
+[WARNING]    org.jenkins-ci.main:ui-samples-plugin:jar:1.519:test
+[WARNING]    javax.servlet:servlet-api:jar:2.4:provided
+[WARNING]    org.codehaus.mojo:animal-sniffer-annotations:jar:1.9:provided
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.3:analyze-dep-mgt (default) @ jobConfigHistory ---
+[INFO] Found Resolved Dependency / DependencyManagement mismatches:
+[INFO]    None
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16:24.038s
+[INFO] Finished at: Wed Oct 16 03:47:50 CEST 2013
+[INFO] Final Memory: 71M/182M
+[INFO] ------------------------------------------------------------------------
+[JENKINS] Archiving /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/pom.xml to org.jenkins-ci.plugins/jobConfigHistory/2.5-SNAPSHOT/jobConfigHistory-2.5-SNAPSHOT.pom
+[JENKINS] Archiving /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory.hpi to org.jenkins-ci.plugins/jobConfigHistory/2.5-SNAPSHOT/jobConfigHistory-2.5-SNAPSHOT.hpi
+[JENKINS] Archiving /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory.jar to org.jenkins-ci.plugins/jobConfigHistory/2.5-SNAPSHOT/jobConfigHistory-2.5-SNAPSHOT.jar
+channel stopped
+[JaCoCo plugin] Collecting JaCoCo coverage data...
+[JaCoCo plugin] **/**.exec;**/classes;**/src/main/java; locations are configured
+[JaCoCo plugin] Number of found exec files: 1
+[JaCoCo plugin] Saving matched execfiles:  /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jacoco.exec
+[JaCoCo plugin] Saving matched class directories:  /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/classes /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jenkins-for-test/WEB-INF/classes /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/target/jobConfigHistory/WEB-INF/classes
+[JaCoCo plugin] Saving matched source directories:  /home/jenkins/workspace/jenkinsci-jobConfigHistory-plugin/src/main/java
+[JaCoCo plugin] Loading inclusions files..
+[JaCoCo plugin] inclusions: []
+[JaCoCo plugin] exclusions: [**/hudson/plugins/jobConfigHistory/JobConfigHistoryConsts.class, **/hudson/plugins/jobConfigHistory/Messages.class, **/bmsi/util/*.class]
+[JaCoCo plugin] Thresholds: JacocoHealthReportThresholds [minClass=0, maxClass=0, minMethod=0, maxMethod=0, minLine=0, maxLine=0, minBranch=0, maxBranch=0, minInstruction=0, maxInstruction=0, minComplexity=0, maxComplexity=0]
+[JaCoCo plugin] Publishing the results..
+[JaCoCo plugin] Loading packages..
+[JaCoCo plugin] Done.
+Email was triggered for: Success
+Sending email for trigger: Success
+[JaCoCo plugin] Loading packages..
+[JaCoCo plugin] Done.
+An attempt to send an e-mail to empty list of recipients, ignored.
+Finished: SUCCESS

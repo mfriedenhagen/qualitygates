@@ -130,6 +130,21 @@ public class BuildLogFileParserTest extends AbstractParserTestUtils {
     }
 
     @Test
+    public void testGetDependencyAnalyzeOnlySectionPresentWithPretext() throws Exception {
+        File file = getFile("log_build_with_dependency_analyze_only_with_pretext");
+
+        parser.parseLogFile(file);
+
+        String result = parser.getContentOfSectionFor(Goal.DEPENDENCY_ANALYSE);
+
+        Assert.assertNotNull("dependency:analyze-only block must be found", result);
+
+        List<String> lines = IOUtils.readLines(new StringReader(result));
+        Assert.assertEquals("Wrong number of line returned, ", 25, lines.size());
+
+    }
+
+    @Test
     public void testGetDependencyAnalyseSectionPresentWithExecutionId() throws Exception {
         File file = getFile("log_build_with_dependency_analyze_with_execution_id");
 

@@ -20,14 +20,14 @@ import org.junit.Test;
 import de.binarytree.plugins.qualitygates.TestHelper;
 import de.binarytree.plugins.qualitygates.result.GateStepReport;
 import de.binarytree.plugins.qualitygates.steps.dependencycheck.DependencyDeclarationCheck.DescriptorImpl;
+import de.binarytree.plugins.qualitygates.steps.dependencycheck.parser.AbstractParserTestUtils;
 import de.binarytree.plugins.qualitygates.steps.dependencycheck.parser.BuildLogFileParser;
 import de.binarytree.plugins.qualitygates.steps.dependencycheck.parser.BuildLogFileParser.Goal;
 import de.binarytree.plugins.qualitygates.steps.dependencycheck.result.MavenDependencyAnalysisResult;
 
 public class DependencyDeclarationCheckTest {
 
-    private static final String DEPENDENCY_SECTION = ""
-            + "[WARNING] Used undeclared dependencies found:"
+    private static final String DEPENDENCY_SECTION = "" + "[WARNING] Used undeclared dependencies found:"
             + "[WARNING]    org.apache.maven:maven-model:jar:2.0.2:compile"
             + "[WARNING]    org.codehaus.plexus:plexus-utils:jar:1.1:compile"
             + "[WARNING] Unused declared dependencies found:"
@@ -36,6 +36,7 @@ public class DependencyDeclarationCheckTest {
 
     class MockDependencyCheck extends DependencyDeclarationCheck {
         private BuildLogFileParser logFileParser;
+
         private MavenDependencyAnalysisResult analysis;
 
         public MockDependencyCheck() {
@@ -48,6 +49,7 @@ public class DependencyDeclarationCheckTest {
             return this.logFileParser;
         }
 
+        @Override
         public DescriptorImpl getDescriptor() {
             return new DependencyDeclarationCheck.DescriptorImpl();
         }
@@ -63,9 +65,13 @@ public class DependencyDeclarationCheckTest {
     }
 
     private AbstractBuild<?, ?> build;
+
     private BuildListener listener;
+
     private Launcher launcher;
+
     private MockDependencyCheck check;
+
     private GateStepReport report;
 
     @Before
@@ -102,8 +108,7 @@ public class DependencyDeclarationCheckTest {
     public void testResultIsFailureWhenExceptionHappens() throws IOException {
         setBuildResultToSuccess();
         BuildLogFileParser parser = check.createLogFileParser();
-        doThrow(new IOException("xxxmessagexxx")).when(parser).parseLogFile(
-                any(File.class));
+        doThrow(new IOException("xxxmessagexxx")).when(parser).parseLogFile(any(File.class));
         check.doStep(build, launcher, listener, report);
         assertEquals(Result.FAILURE, report.getResult());
         assertTrue(report.getReason().toLowerCase().contains("xxxmessagexxx"));
@@ -116,8 +121,7 @@ public class DependencyDeclarationCheckTest {
         letParserReturn(parser, "");
         check.doStep(build, launcher, listener, report);
         assertEquals(Result.UNSTABLE, report.getResult());
-        assertTrue(report.getReason().toLowerCase()
-                .contains("dependency:analyze"));
+        assertTrue(report.getReason().toLowerCase().contains("dependency:analyze"));
     }
 
     @Test
@@ -154,6 +158,19 @@ public class DependencyDeclarationCheckTest {
     }
 
     @Test
+    public void testResultIsUnstableIfViolationsInRealLogFileArePresent() throws Exception {
+        setBuildResultToSuccess();
+        when(build.getLogFile()).thenReturn(
+                AbstractParserTestUtils.getFile("log_build_with_dependency_analyze_only_with_pretext"));
+        DependencyDeclarationCheck check = new DependencyDeclarationCheck();
+        check.doStep(build, launcher, listener, report);
+        System.out.println(report.getReason());
+        assertEquals(Result.UNSTABLE, report.getResult());
+        assertTrue(report.getReason().contains("11 undeclared"));
+        assertTrue(report.getReason().contains("4 unused"));
+    }
+
+    @Test
     public void testResultIsSuccessIfNoViolationsAreFoundButBuildIsUnstable() {
         when(build.getResult()).thenReturn(Result.UNSTABLE);
         BuildLogFileParser parser = check.createLogFileParser();
@@ -164,18 +181,17 @@ public class DependencyDeclarationCheckTest {
     }
 
     @Test
-    public void testDescriptionContainsDependency(){
-        DescriptorImpl descriptor = new DependencyDeclarationCheck.DescriptorImpl(); 
-        assertTrue(descriptor.getDisplayName().toLowerCase().contains("dependency")); 
-        assertTrue(check.getDescription().toLowerCase().contains("dependency")); 
+    public void testDescriptionContainsDependency() {
+        DescriptorImpl descriptor = new DependencyDeclarationCheck.DescriptorImpl();
+        assertTrue(descriptor.getDisplayName().toLowerCase().contains("dependency"));
+        assertTrue(check.getDescription().toLowerCase().contains("dependency"));
     }
-    private void letAnalysisReturn(MockDependencyCheck check,
-            int numberOfUndeclaredDependencies, int numberOfUnusedDependencies) {
+
+    private void letAnalysisReturn(MockDependencyCheck check, int numberOfUndeclaredDependencies,
+            int numberOfUnusedDependencies) {
         MavenDependencyAnalysisResult analysis = check.getMockAnalysis();
-        when(analysis.getNumberOfUndeclaredDependencies()).thenReturn(
-                numberOfUndeclaredDependencies);
-        when(analysis.getNumberOfUnusedDependencies()).thenReturn(
-                numberOfUnusedDependencies);
+        when(analysis.getNumberOfUndeclaredDependencies()).thenReturn(numberOfUndeclaredDependencies);
+        when(analysis.getNumberOfUnusedDependencies()).thenReturn(numberOfUnusedDependencies);
     }
 
     private void letParserReturn(BuildLogFileParser parser, String returnValue) {
